@@ -12,18 +12,37 @@ logger = logging.getLogger("windiagkit-mcp")
 # Initialize FastMCP Server
 mcp = FastMCP("WinDiagKit")
 
+import platform
+
 # Constants
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCRIPTS_DIR = os.path.join(BASE_DIR, "scripts")
+IS_WINDOWS = platform.system() == "Windows"
 
-def run_powershell(script_rel_path: str, args: List[str] = None) -> str:
-    """Helper to run PowerShell scripts located in the scripts directory."""
-    script_path = os.path.join(SCRIPTS_DIR, script_rel_path)
+def run_script(script_rel_path: str, mac_script_path: str = None, args: List[str] = None) -> str:
+    """
+    Helper to run scripts based on OS.
+    If Windows, runs the PowerShell script_rel_path.
+    If Mac/Linux, runs the mac_script_path (if provided).
+    """
+    if IS_WINDOWS:
+        script_path = os.path.join(SCRIPTS_DIR, script_rel_path)
+        interpreter = "powershell"
+        exec_args = ["-ExecutionPolicy", "Bypass", "-File", script_path]
+    else:
+        # macOS / Linux logic
+        if not mac_script_path:
+            return "Error: This tool is not yet available for macOS/Linux."
+        
+        script_path = os.path.join(SCRIPTS_DIR, mac_script_path)
+        interpreter = "bash"
+        exec_args = [script_path]
+
     if not os.path.exists(script_path):
         return f"Error: Script not found at {script_path}"
 
-    command = ["powershell", "-ExecutionPolicy", "Bypass", "-File", script_path]
-    if args:
+    command = [interpreter] + exec_args
+    if args and IS_WINDOWS: # Pass args only to PS for now
         command.extend(args)
 
     try:
@@ -31,10 +50,10 @@ def run_powershell(script_rel_path: str, args: List[str] = None) -> str:
             command,
             capture_output=True,
             text=True,
-            check=False  # Don't throw exception on non-zero exit, capture stderr
+            check=False
         )
         if result.returncode != 0:
-            return f"Command Failed (Exit Code {result.returncode}):\n{result.stderr}\n\nOutput:\n{result.stdout}"
+             return f"Command Failed (Exit Code {result.returncode}):\n{result.stderr}\n\nOutput:\n{result.stdout}"
         return result.stdout
     except Exception as e:
         return f"Execution Error: {str(e)}"
@@ -43,9 +62,9 @@ def run_powershell(script_rel_path: str, args: List[str] = None) -> str:
 def get_system_health() -> str:
     """
     Performs a quick system health check (CPU, Disk, Memory).
-    Returns a textual report.
+    Works on Windows and Mac.
     """
-    return run_powershell("diagnostic/SystemDiagnosticUser.ps1")
+    return run_script("diagnostic/SystemDiagnosticUser.ps1", "mac/diagnostic.sh")
 
 @mcp.tool()
 def analyze_storage() -> str:
@@ -53,14 +72,14 @@ def analyze_storage() -> str:
     Analyzes disk usage to find large folders and potential cleanup targets.
     Returns a list of space hogs.
     """
-    return run_powershell("analysis/ScanStorage.ps1")
+    return run_script("analysis/ScanStorage.ps1")
 
 @mcp.tool()
 def check_docker_usage() -> str:
     """
     Checks Docker disk usage (images, containers, volumes).
     """
-    return run_powershell("analysis/ScanTargets.ps1")
+    return run_script("analysis/ScanTargets.ps1")
 
 @mcp.tool()
 def run_safe_cleanup(dry_run: bool = True) -> str:
@@ -68,15 +87,12 @@ def run_safe_cleanup(dry_run: bool = True) -> str:
     Runs safe cleanup tasks (Browser cache, Downloads, Temp).
     
     Args:
-        dry_run: If True, only lists what would be deleted. (Note: Current script might run immediately, so use with caution)
+        dry_run: If True, only lists what would be deleted.
     """
-    # Note: AdditionalCleanup.ps1 is designed to run safely. 
-    # For a true dry_run, we would need to pass a flag to the PS script.
-    # Currently assuming immediate execution as per existing script design.
     if dry_run:
         return "Dry run not fully supported by underlying script yet. It would clean Browsers, Downloads, and Temp."
     
-    return run_powershell("cleanup/AdditionalCleanup.ps1")
+    return run_script("cleanup/AdditionalCleanup.ps1")
 
 @mcp.tool()
 def read_architecture() -> str:
