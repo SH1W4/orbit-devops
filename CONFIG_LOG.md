@@ -1,4 +1,4 @@
-﻿# Relatório de Configuração do Ambiente
+# Relatório de Configuração do Ambiente
 Data: 2025-06-01 20:06
 
 ## Configurações Realizadas

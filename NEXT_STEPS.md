@@ -1,4 +1,4 @@
-﻿# Instruções Pós-Reinicialização (2025-06-02 02:14)
+# Instruções Pós-Reinicialização (2025-06-02 02:14)
 
 ## ✅ Instalado Parcialmente
 1. WSL (requer reinicialização)
@@ -31,5 +31,5 @@
 
 ## 💾 Backup
 Seus arquivos de configuração e diagnóstico estão seguros em:
-C:\\Users\\João\\Desktop\\DIAGNOSTIC_BACKUP
+C:\\Users\\Username\\Desktop\\DIAGNOSTIC_BACKUP
 

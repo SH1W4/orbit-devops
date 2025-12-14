@@ -16,12 +16,12 @@ Write-Host "=== SCANNING STORAGE ==="
 Write-Host "Checking main user folders..."
 
 $folders = @(
-    "C:\Users\João\Downloads",
-    "C:\Users\João\AppData\Local\Temp",
-    "C:\Users\João\Desktop",
-    "C:\Users\João\Documents",
-    "C:\Users\João\Pictures",
-    "C:\Users\João\Videos"
+    "$env:USERPROFILE\Downloads",
+    "$env:USERPROFILE\AppData\Local\Temp",
+    "$env:USERPROFILE\Desktop",
+    "$env:USERPROFILE\Documents",
+    "$env:USERPROFILE\Pictures",
+    "$env:USERPROFILE\Videos"
 )
 
 foreach ($f in $folders) {
@@ -32,7 +32,7 @@ Write-Host "`n=== TOP 20 LARGEST FILES (User Home) ==="
 # This might take a while, so we limit depth or scope if needed. 
 # For now, let's look at the root of User home and 2 levels deep to avoid massive scan times, 
 # or just scan Downloads and Documents specifically for large files.
-Get-ChildItem "C:\Users\João" -Recurse -File -ErrorAction SilentlyContinue | 
+Get-ChildItem "$env:USERPROFILE" -Recurse -File -ErrorAction SilentlyContinue | 
 Sort-Object Length -Descending | 
 Select-Object -First 20 | 
 ForEach-Object {

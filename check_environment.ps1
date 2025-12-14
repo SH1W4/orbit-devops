@@ -1,4 +1,4 @@
-﻿# Script de Verificação do Ambiente de Desenvolvimento
+# Script de Verificação do Ambiente de Desenvolvimento
 # check_environment.ps1
 
 function Write-StatusMessage {

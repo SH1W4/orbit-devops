@@ -1,5 +1,5 @@
 
-$path = "C:\Users\João"
+$path = "$env:USERPROFILE"
 Get-ChildItem $path -Directory -ErrorAction SilentlyContinue | ForEach-Object {
     if ($_.Name -notin @("AppData", "Documents", "Downloads", "Desktop")) {
         $size = (Get-ChildItem $_.FullName -Recurse -File -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum / 1GB

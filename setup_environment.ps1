@@ -1,4 +1,4 @@
-﻿# Script de Configuração Inicial
+# Script de Configuração Inicial
 # setup_environment.ps1
 
 # Configurar PYTHONPATH
@@ -53,7 +53,7 @@ Data: $(Get-Date -Format 'yyyy-MM-dd HH:mm')
 "@
 
 # Salvar relatório
-$configLog | Out-File -FilePath "C:\Users\João\Desktop\DIAGNOSTIC_BACKUP\CONFIG_LOG.md" -Encoding utf8
+$configLog | Out-File -FilePath "$env:USERPROFILE\Desktop\DIAGNOSTIC_BACKUP\CONFIG_LOG.md" -Encoding utf8
 
 Write-Host "`nConfigurações iniciais aplicadas. Verifique o relatório em CONFIG_LOG.md" -ForegroundColor Green
-Get-Content "C:\Users\João\Desktop\DIAGNOSTIC_BACKUP\CONFIG_LOG.md"
+Get-Content "$env:USERPROFILE\Desktop\DIAGNOSTIC_BACKUP\CONFIG_LOG.md"

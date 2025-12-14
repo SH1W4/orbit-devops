@@ -1,7 +1,7 @@
 # Script de Limpeza Adicional
 # Pode ser executado sem privilégios de admin
 
-$logPath = "C:\Users\João\Desktop\DIAGNOSTIC_BACKUP\ADDITIONAL_CLEANUP_LOG.txt"
+$logPath = "$env:USERPROFILE\Desktop\DIAGNOSTIC_BACKUP\ADDITIONAL_CLEANUP_LOG.txt"
 
 function Write-Log {
     param($Message)
@@ -14,7 +14,7 @@ Write-Log "=== LIMPEZA ADICIONAL ==="
 
 # 1. Cache do Google Chrome
 Write-Log "Limpando cache do Google Chrome..."
-$chromePath = "C:\Users\João\AppData\Local\Google\Chrome\User Data\Default\Cache"
+$chromePath = "$env:USERPROFILE\AppData\Local\Google\Chrome\User Data\Default\Cache"
 if (Test-Path $chromePath) {
     $before = (Get-ChildItem $chromePath -Recurse -Force -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum / 1GB
     Remove-Item "$chromePath\*" -Recurse -Force -ErrorAction SilentlyContinue
@@ -23,7 +23,7 @@ if (Test-Path $chromePath) {
 
 # 2. Cache do Edge
 Write-Log "Limpando cache do Edge..."
-$edgePath = "C:\Users\João\AppData\Local\Microsoft\Edge\User Data\Default\Cache"
+$edgePath = "$env:USERPROFILE\AppData\Local\Microsoft\Edge\User Data\Default\Cache"
 if (Test-Path $edgePath) {
     $before = (Get-ChildItem $edgePath -Recurse -Force -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum / 1GB
     Remove-Item "$edgePath\*" -Recurse -Force -ErrorAction SilentlyContinue
@@ -32,7 +32,7 @@ if (Test-Path $edgePath) {
 
 # 3. Cache geral do usuário
 Write-Log "Limpando .cache do usuário..."
-$cachePath = "C:\Users\João\.cache"
+$cachePath = "$env:USERPROFILE\.cache"
 if (Test-Path $cachePath) {
     $before = (Get-ChildItem $cachePath -Recurse -Force -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum / 1GB
     Remove-Item "$cachePath\*" -Recurse -Force -ErrorAction SilentlyContinue
@@ -41,7 +41,7 @@ if (Test-Path $cachePath) {
 
 # 4. Downloads - Instaladores
 Write-Log "Removendo instaladores antigos de Downloads..."
-$downloads = "C:\Users\João\Downloads"
+$downloads = "$env:USERPROFILE\Downloads"
 $installers = @("*.exe", "*.msi")
 foreach ($pattern in $installers) {
     Get-ChildItem $downloads -Filter $pattern -File | Where-Object {
@@ -55,7 +55,7 @@ foreach ($pattern in $installers) {
 
 # 5. Temp do usuário (arquivos antigos)
 Write-Log "Limpando arquivos temporários antigos..."
-$tempPath = "C:\Users\João\AppData\Local\Temp"
+$tempPath = "$env:USERPROFILE\AppData\Local\Temp"
 $cutoffDate = (Get-Date).AddDays(-7)
 Get-ChildItem $tempPath -Recurse -Force -ErrorAction SilentlyContinue | 
 Where-Object { $_.LastWriteTime -lt $cutoffDate } |

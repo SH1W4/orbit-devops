@@ -1,5 +1,5 @@
 $ErrorActionPreference = "SilentlyContinue"
-$logPath = "C:\Users\João\Desktop\DIAGNOSTIC_BACKUP\TOTAL_CLEANUP_LOG.txt"
+$logPath = "$env:USERPROFILE\Desktop\DIAGNOSTIC_BACKUP\TOTAL_CLEANUP_LOG.txt"
 
 function Write-Log {
     param($Message)
@@ -42,7 +42,7 @@ if (Get-Command docker -ErrorAction SilentlyContinue) {
 
 # 3. ANACONDA
 Write-Log "--- Removing Anaconda ---"
-$anacondaPath = "C:\Users\João\anaconda3"
+$anacondaPath = "$env:USERPROFILE\anaconda3"
 if (Test-Path $anacondaPath) {
     Write-Log "Found Anaconda at $anacondaPath"
     

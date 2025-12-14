@@ -1,5 +1,5 @@
 $ErrorActionPreference = "SilentlyContinue"
-$logPath = "C:\Users\João\Desktop\DIAGNOSTIC_BACKUP\CLEANUP_LOG.txt"
+$logPath = "$env:USERPROFILE\Desktop\DIAGNOSTIC_BACKUP\CLEANUP_LOG.txt"
 
 function Write-Log {
     param($Message)
@@ -11,7 +11,7 @@ function Write-Log {
 Write-Log "=== STARTING CLEANUP PROCESS ==="
 
 # 1. Cursor Backup
-$cursorBackup = "C:\Users\João\AppData\Roaming\Cursor\User\globalStorage\state.vscdb.backup"
+$cursorBackup = "$env:USERPROFILE\AppData\Roaming\Cursor\User\globalStorage\state.vscdb.backup"
 if (Test-Path $cursorBackup) {
     Write-Log "Removing Cursor Backup: $cursorBackup"
     try {
@@ -48,7 +48,7 @@ else {
 
 # 3. Temp Files
 Write-Log "Cleaning User Temp Folder..."
-$tempPath = "C:\Users\João\AppData\Local\Temp"
+$tempPath = "$env:USERPROFILE\AppData\Local\Temp"
 if (Test-Path $tempPath) {
     $before = (Get-ChildItem $tempPath -Recurse -Force -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum
     

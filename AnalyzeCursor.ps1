@@ -1,5 +1,5 @@
 
-$path = "C:\Users\João\AppData\Roaming\Cursor"
+$path = "$env:USERPROFILE\AppData\Roaming\Cursor"
 if (Test-Path $path) {
     Write-Host "Analyzing Cursor Data at $path..."
     

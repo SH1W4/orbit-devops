@@ -1,4 +1,4 @@
-﻿# Configuração do Ambiente de Desenvolvimento
+# Configuração do Ambiente de Desenvolvimento
 Data: 2025-06-01 20:04
 
 ## Estado Inicial
@@ -31,4 +31,4 @@ Data: 2025-06-01 20:04
 
 ## Ambiente Atual
 PATH do usuário:
-C:\Program Files\Python311\Scripts\;C:\Program Files\Python311\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\João\.cargo\bin;C:\Users\João\AppData\Local\Microsoft\WindowsApps;;C:\Users\João\AppData\Roaming\Python\Python311\Scripts
+C:\Program Files\Python311\Scripts\;C:\Program Files\Python311\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Username\.cargo\bin;C:\Users\Username\AppData\Local\Microsoft\WindowsApps;;C:\Users\Username\AppData\Roaming\Python\Python311\Scripts

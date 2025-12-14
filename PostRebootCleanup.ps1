@@ -1,7 +1,7 @@
 # Post-Reboot Cleanup Script
 # Run as Administrator
 
-$logPath = "C:\Users\João\Desktop\DIAGNOSTIC_BACKUP\POST_REBOOT_LOG.txt"
+$logPath = "$env:USERPROFILE\Desktop\DIAGNOSTIC_BACKUP\POST_REBOOT_LOG.txt"
 
 function Write-Log {
     param($Message)
@@ -23,7 +23,7 @@ catch {
 }
 
 # 2. Remove Anaconda (if still exists)
-$anacondaPath = "C:\Users\João\anaconda3"
+$anacondaPath = "$env:USERPROFILE\anaconda3"
 if (Test-Path $anacondaPath) {
     Write-Log "Removing remaining Anaconda files..."
     cmd /c rmdir /s /q "$anacondaPath"

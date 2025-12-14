@@ -14,7 +14,7 @@ else {
 
 # 2. Check Large AppData Folders
 Write-Host "`n--- APPDATA (Top 10 Folders) ---"
-$appDataLocal = "C:\Users\João\AppData\Local"
+$appDataLocal = "$env:USERPROFILE\AppData\Local"
 if (Test-Path $appDataLocal) {
     Get-ChildItem $appDataLocal -Directory -ErrorAction SilentlyContinue | ForEach-Object {
         $size = (Get-ChildItem $_.FullName -Recurse -File -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum / 1MB
@@ -24,7 +24,7 @@ if (Test-Path $appDataLocal) {
 
 # 3. Check Downloads for large files (>100MB)
 Write-Host "`n--- LARGE DOWNLOADS (>100MB) ---"
-Get-ChildItem "C:\Users\João\Downloads" -File | Where-Object { $_.Length -gt 100MB } | 
+Get-ChildItem "$env:USERPROFILE\Downloads" -File | Where-Object { $_.Length -gt 100MB } | 
 Sort-Object Length -Descending | 
 ForEach-Object {
     Write-Host "$($_.Name) - $([math]::Round($_.Length/1MB, 0)) MB"
@@ -32,7 +32,7 @@ ForEach-Object {
 
 # 4. Search for node_modules in Desktop (can be slow, limiting depth)
 Write-Host "`n--- NODE_MODULES SEARCH (Desktop - Depth 3) ---"
-Get-ChildItem "C:\Users\João\Desktop" -Directory -Recurse -Depth 3 -Filter "node_modules" -ErrorAction SilentlyContinue | 
+Get-ChildItem "$env:USERPROFILE\Desktop" -Directory -Recurse -Depth 3 -Filter "node_modules" -ErrorAction SilentlyContinue | 
 ForEach-Object {
     $size = (Get-ChildItem $_.FullName -Recurse -File -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum / 1MB
     Write-Host "Found: $($_.FullName) - $([math]::Round($size, 0)) MB"

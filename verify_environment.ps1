@@ -1,4 +1,4 @@
-﻿# Script de Verificação do Ambiente
+# Script de Verificação do Ambiente
 Write-Host "=== Verificação do Ambiente de Desenvolvimento ===" -ForegroundColor Cyan
 Write-Host "Execute este script após reiniciar o terminal`n"
 
