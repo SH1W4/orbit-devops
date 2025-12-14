@@ -1,0 +1,98 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vscode/main/extensions/configuration-editing/schemas/devContainer.schema.json",
+  "name": "WinDiagKit Architecture",
+  "version": "1.0.0",
+  "description": "Enterprise Architecture Pattern for WinDiagKit - Windows System Diagnostic & Optimization",
+  
+  "architecture": {
+    "layers": [
+      {
+        "name": "Diagnostic Layer",
+        "description": "Collects system metrics and health status",
+        "components": [
+          {
+            "name": "Core Diagnostic",
+            "path": "scripts/diagnostic/",
+            "scripts": ["SystemDiagnostic.ps1", "SystemDiagnosticUser.ps1"],
+            "responsibilities": ["Hardware info", "Disk metrics", "Service status", "Event logs"]
+          },
+          {
+            "name": "Analysis Engine",
+            "path": "scripts/analysis/",
+            "scripts": ["ScanStorage.ps1", "ScanTargets.ps1", "AnalyzeCursor.ps1"],
+            "responsibilities": ["Space usage calculation", "Pattern matching", "Target identification"]
+          }
+        ]
+      },
+      {
+        "name": "Execution Layer",
+        "description": "Performs actions based on diagnostic data",
+        "components": [
+          {
+            "name": "Cleanup Engine",
+            "path": "scripts/cleanup/",
+            "scripts": ["ExecuteCleanup.ps1", "AdditionalCleanup.ps1", "ExecuteTotalCleanup.ps1"],
+            "responsibilities": ["File removal", "Docker pruning", "Cache clearing", "Safe execution"]
+          }
+        ]
+      },
+      {
+        "name": "Utility Layer",
+        "description": "Support and configuration",
+        "components": [
+          {
+            "name": "Helpers",
+            "path": "scripts/utils/",
+            "scripts": ["check_environment.ps1", "verify_environment.ps1"],
+            "responsibilities": ["Pre-flight checks", "Environment setup", "Logging wrapper"]
+          }
+        ]
+      }
+    ],
+    
+    "patterns": {
+      "design_patterns": [
+        {
+          "name": "Pipeline Pattern",
+          "description": "Diagnostic -> Analysis -> Execution workflow"
+        },
+        {
+          "name": "Dry-Run First",
+          "description": "Scripts verify actions before execution or offer 'Scan Only' modes"
+        },
+        {
+          "name": "Least Privilege",
+          "description": "Separation of User-mode scripts vs Admin-mode scripts"
+        }
+      ],
+      "safety_mechanisms": [
+        "Non-destructive by default",
+        "Verbose logging to text files",
+        "Error handling blocks (Try/Catch)",
+        "Environment variable sanitization"
+      ]
+    },
+    
+    "data_flow": {
+      "standard_workflow": [
+        "User -> SystemDiagnosticUser.ps1 (Health Check)",
+        "SystemDiagnosticUser.ps1 -> Report.txt (Output)",
+        "User -> ScanStorage.ps1 (Identify Targets)",
+        "ScanStorage.ps1 -> Console/Log (Actionable Insights)",
+        "User -> AdditionalCleanup.ps1 (Safe Execution)",
+        "AdditionalCleanup.ps1 -> Disk (Free Space)"
+      ]
+    }
+  },
+  
+  "development": {
+    "setup": "scripts/utils/setup_environment.ps1",
+    "test": "Invoke-Pester tests/",
+    "lint": "Invoke-ScriptAnalyzer -Path .",
+    "requirements": {
+      "os": "Windows 10/11",
+      "powershell": ">= 5.1",
+      "modules": ["PSScriptAnalyzer", "Pester"]
+    }
+  }
+}
