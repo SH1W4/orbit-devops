@@ -18,6 +18,7 @@
     </a>
     <img src="https://img.shields.io/badge/platform-Windows_10%2F11-0078D6?style=flat-square&logo=windows&logoColor=white" alt="Platform" />
     <img src="https://img.shields.io/badge/PowerShell-5.1%2B-5391FE?style=flat-square&logo=powershell&logoColor=white" alt="PowerShell" />
+    <img src="https://img.shields.io/badge/AI-MCP_Ready-purple?style=flat-square&logo=openai&logoColor=white" alt="MCP Ready" />
   </p>
 </div>
 
@@ -44,6 +45,13 @@
 - **Docker Prune Strategy:** Smart cleaning that respects active containers.
 - **Anaconda Reclamation:** Safely removes unused Python distributions (often 10GB+).
 - **Browser Hygiene:** Cleans caches for Chrome/Edge without losing history or cookies.
+
+### 🤖 AI Integration (MCP Agent)
+WinDiagKit includes a native **Model Context Protocol (MCP)** server, turning your diagnostic toolkit into an active agent.
+- **Talk to your system:** Connect Claude Desktop or Cursor to WinDiagKit.
+- **Active Diagnostics:** Ask AI to "Check system health" or "Find deep storage hogs".
+- **Safe Execution:** AI observes strict safety protocols before running any cleanup.
+- **Setup:** See [mcp/README.md](mcp/README.md) for integration guide.
 
 ## 🚀 Quick Start
 
