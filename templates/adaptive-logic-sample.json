@@ -1,0 +1,27 @@
+{
+  "profile": "Autonomous-Edge-Agent",
+  "base_dna": "v1.2.0-core",
+  "adaptation_rules": [
+    {
+      "trigger": "RAM < 8GB",
+      "action": "use_lite_runtimes",
+      "impact": "Disables local LLM inference, switches to API-based agents."
+    },
+    {
+      "trigger": "Disk_Free < 20GB",
+      "action": "aggressive_cleanup",
+      "impact": "Runs `orbit clean` and `orbit compact` before any task."
+    },
+    {
+      "trigger": "OS == Windows_Server",
+      "action": "enable_fleet_telemetry",
+      "impact": "Activates enterprise monitoring hooks."
+    }
+  ],
+  "evolution_path": {
+    "step_1": "Analyze Context",
+    "step_2": "Mutate Requirements",
+    "step_3": "Provision Bio-Shell",
+    "step_4": "Verify Health"
+  }
+}
