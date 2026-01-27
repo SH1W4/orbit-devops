@@ -40,25 +40,29 @@
   - **IDE:** Optimizes Cursor/VSCode caches.
 - **System:** Cleans browser caches and temp files safely.
 
-### 3. 🐧 WSL2 Management (Coming Soon)
+### 3. 🐧 WSL2 Management
 - **Compact:** Shrimp your `ext4.vhdx` files to reclaim "ghost" space deleted inside Linux.
 - **Analyze:** See which WSL distros are eating your drive.
 
-### 4. 📦 Stack Control (Coming Soon)
-- **Snapshot:** `winget export` wrap to backup your toolchain.
+### 4. 📦 Stack Control
+- **Snapshot:** `winget export` wrapper to backup your toolchain.
+- **Sync:** Automatically push your environment DNA to GitHub (`SH1W4/stack`).
 - **Restore:** One-click reinstallation of your dev environment.
 
 ## 🤖 AI Integration (MCP Agent)
 
 Orbit-DevOps includes a native **Model Context Protocol (MCP)** server.
 - **Connect:** Link Claude/Cursor to your local machine.
-- **Command:** "Analyze my disk usage" or "Clean Docker garbage".
-- **Documentation:** See [mcp/README.md](mcp/README.md).
+- **SKILL:** Pre-defined `.agent/skills/orbit-devops` for autonomous AI operation.
+- **Documentation:** See [mcp/README.md](mcp/README.md) and [SKILL.md](.agent/skills/orbit-devops/SKILL.md).
 
 ## 🚀 Quick Start
 
 ### Interactive Menu (The "Orbit" Command)
-*Coming in v1.1.0*
+Run `Orbit.ps1` to access the full control panel:
+```powershell
+.\Orbit.ps1
+```
 
 ### Manual Execution
 
