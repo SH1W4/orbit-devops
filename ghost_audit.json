@@ -1,0 +1,66 @@
+{
+  "Storage": [
+    {
+      "Path": "C:\\Users\\João\\AppData\\Local\\npm-cache",
+      "Category": "npm-cache",
+      "SizeGB": 1.3
+    },
+    {
+      "Path": "C:\\Users\\João\\AppData\\Local\\pip\\cache",
+      "Category": "pip-cache",
+      "SizeGB": 0.66
+    },
+    {
+      "Path": "C:\\Users\\João\\AppData\\Local\\Temp",
+      "Category": "System-Temp",
+      "SizeGB": 0.01
+    },
+    {
+      "Path": "C:\\Users\\João\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Cache",
+      "Category": "Edge-Cache",
+      "SizeGB": 0.0
+    }
+  ],
+  "Memory": [
+    {
+      "MemoryMB": 656.98,
+      "Process": "Antigravity"
+    },
+    {
+      "MemoryMB": 135.22,
+      "Process": "Memory Compression"
+    },
+    {
+      "MemoryMB": 122.66,
+      "Process": "MsMpEng"
+    },
+    {
+      "MemoryMB": 117.66,
+      "Process": "language_server_windows_x64"
+    },
+    {
+      "MemoryMB": 101.31,
+      "Process": "Antigravity"
+    },
+    {
+      "MemoryMB": 85.42,
+      "Process": "pwsh"
+    },
+    {
+      "MemoryMB": 83.34,
+      "Process": "Antigravity"
+    },
+    {
+      "MemoryMB": 69.35,
+      "Process": "language_server_windows_x64"
+    },
+    {
+      "MemoryMB": 66.86,
+      "Process": "msedge"
+    },
+    {
+      "MemoryMB": 52.8,
+      "Process": "Antigravity"
+    }
+  ]
+}
