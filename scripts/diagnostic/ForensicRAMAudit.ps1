@@ -1,6 +1,6 @@
 $ErrorActionPreference = "SilentlyContinue"
-$reportFile = "c:\Users\João\Desktop\PROJETOS\04_DEVELOPER_TOOLS\orbit-devops\FullRAMReport.txt"
-$userPath = "c:\Users\João\Desktop\PROJETOS"
+$reportFile = "$HOME\Desktop\PROJETOS\04_DEVELOPER_TOOLS\orbit-devops\FullRAMReport.txt"
+$userPath = "$HOME\Desktop\PROJETOS"
 
 Write-Output "=== AUDITORIA FORENSE DE RAM (100% DOS PROCESSOS) ===" > $reportFile
 Write-Output "Data: $(Get-Date)" >> $reportFile

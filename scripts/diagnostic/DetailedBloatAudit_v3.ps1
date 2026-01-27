@@ -1,5 +1,5 @@
 $ErrorActionPreference = "SilentlyContinue"
-# Using environment variable to avoid encoding issues with 'João'
+# Using environment variable to avoid encoding issues with 'User'
 $userPath = [System.IO.Path]::Combine($env:USERPROFILE, "Desktop", "PROJETOS")
 $categories = @("00_ECOSYSTEM_COMERCIAL", "01_CORE_SYSTEMS", "02_ORGANIZATIONS", "03_AI_AGENTS", "04_DEVELOPER_TOOLS", "05_PLATFORMS", "06_UTILITIES", "07_RESEARCH", "08_PROFILE", "GUARDRIVE", "_SCRIPTS")
 

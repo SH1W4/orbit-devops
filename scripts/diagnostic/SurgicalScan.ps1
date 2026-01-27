@@ -1,5 +1,5 @@
 $ErrorActionPreference = "SilentlyContinue"
-$root = "c:\Users\João\Desktop\PROJETOS"
+$root = "$HOME\Desktop\PROJETOS"
 $targets = @(
     "03_AI_AGENTS\VIREON\target",
     "02_ORGANIZATIONS\VAREJO\GuardFlow\backend\target",

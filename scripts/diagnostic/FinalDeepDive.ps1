@@ -16,7 +16,7 @@ foreach ($m in $media) {
 # 2. Other Users
 Write-Host "`n--- Checking Other Users ---"
 Get-ChildItem "C:\Users" -Directory | ForEach-Object {
-    if ($_.Name -ne "João" -and $_.Name -ne "Public") {
+    if ($_.Name -ne "User" -and $_.Name -ne "Public") {
         $size = Get-ChildItem $_.FullName -Recurse -Force -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum
         Write-Host "User $($_.Name) : $([math]::Round($size.Sum / 1GB, 2)) GB"
     }

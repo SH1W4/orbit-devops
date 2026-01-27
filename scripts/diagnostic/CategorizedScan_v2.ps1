@@ -1,5 +1,5 @@
 $ErrorActionPreference = "SilentlyContinue"
-$root = "c:\Users\João\Desktop\PROJETOS"
+$root = "$HOME\Desktop\PROJETOS"
 $categories = @("00_ECOSYSTEM_COMERCIAL", "01_CORE_SYSTEMS", "02_ORGANIZATIONS", "03_AI_AGENTS", "04_DEVELOPER_TOOLS", "05_PLATFORMS", "06_UTILITIES", "07_RESEARCH", "08_PROFILE", "GUARDRIVE", "_SCRIPTS")
 
 Write-Host "=== CATEGORIZED DEV-BLOAT SCAN (v2) ===" -ForegroundColor Cyan

@@ -1,5 +1,5 @@
 $ErrorActionPreference = "SilentlyContinue"
-$root = "c:\Users\João\Desktop\PROJETOS"
+$root = "$HOME\Desktop\PROJETOS"
 $categories = Get-ChildItem $root -Directory | Where-Object { $_.Name -match "^\d+|GUARDRIVE|_SCRIPTS" }
 
 Write-Host "=== CATEGORIZED DEV-BLOAT SCAN ===" -ForegroundColor Cyan
