@@ -4,7 +4,13 @@ Este arquivo rastreia a evolução estratégica e os marcos técnicos do projeto
 
 ## 🚀 Versões & Marcos (Log)
 
-### v1.4.1 (Atual) - Consolidação da Simbiose Matemática
+### v1.4.2 (Atual) - Autoridade Científica & Visual
+- **Pesquisa**: Formalização do Manifesto Técnico no padrão **arXiv/LaTeX**.
+- **Visual**: Mapeamento completo da arquitetura e fluxos de segurança via Mermaid.
+- **Saneamento**: Execução da "Caçada Fantasma" com recuperação de ~9 GB de entropia sistêmica.
+- **Protocolo**: Ativação do Symbeon Zero para proteção de IP.
+
+### v1.4.1 - Consolidação da Simbiose Matemática
 - **Arquitetura**: Integração total da [Álgebra Orbital](./ORBIT_ALGEBRA.md).
 - **IA**: Motor de Raciocínio MCP capaz de gerar provas lógicas formais para ações do sistema.
 - **DNA**: Sincronização final com a biblioteca descentralizada `agent-stack-dev`.
