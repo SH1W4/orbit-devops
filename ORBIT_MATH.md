@@ -1,52 +1,26 @@
-# 🧮 Mathematica Orbitae: A Lógica Não-Semântica do Orbit
+# 🧮 Mathematica Orbitae: A Lógica de Homeostase Symbeon
 
-O Orbit não opera apenas sobre arquivos; ele opera sobre a **Homeostase Sistêmica**. Para fundamentar essa simbiose, definimos a **Matemática do Orbit**, expressa formalmente através da [Álgebra Orbital](./ORBIT_ALGEBRA.md).
+O Orbit não opera apenas sobre arquivos; ele opera sobre a **Homeostase Sistêmica**. Este documento resume os princípios fundamentais que regem a inteligência de diagnóstico do ecossistema.
 
-## 1. As Variáveis Fundamentais
+## 1. Princípios de Otimização
 
-| Símbolo | Nome | Definição |
-| :--- | :--- | :--- |
-| $\Omega$ | **Omega (Entropia)** | Medida de ruído, lixo e processos fantasmas que drenam o sistema. |
-| $\Phi$ | **Phi (Vitalidade)** | Medida de recursos puros disponíveis (CPU Cycle, RAM Free, Disk Latency). |
-| $\Sigma$ | **Sigma (Simbiose)** | Grau de alinhamento entre o **DNA do Agente** e a **Infraestrutura**. |
-| $\Delta$ | **Delta (Transformação)** | O impacto de uma operação Orbit sobre o sistema. |
+O Orbit utiliza um motor de lógica proprietário baseado em três vetores fundamentais:
 
----
-
-## 2. A Equação de Vitalidade Agente ($V_a$)
-
-A vitalidade de um ambiente não é apenas ter espaço livre, mas sim a relação entre o que é útil e o que é ruído, modulada pela capacidade do agente de operar ali.
-
-$$V_a = \left( \frac{\Phi}{\Omega + 1} \right) \cdot \Sigma^e$$
-
-*Onde $e$ é o expoente de eficiência da stack provisionada.*
-
-### Axiomas:
-1. **Axioma da Ordem**: Quando $\Omega \to 0$, $V_a \to \text{Máximo Teórico}$.
-2. **Axioma da Simbiose**: Se $\Sigma = 0$ (desalinhamento total), a Vitalidade é nula, independente dos recursos disponíveis.
+- **$\Omega$ (Entropia)**: A medida de ruído e resíduos que impedem a performance.
+- **$\Phi$ (Vitalidade)**: A energia bruta e recursos disponíveis no sistema host.
+- **$\Sigma$ (Simbiose)**: O índice de alinhamento entre o software e a infraestrutura.
 
 ---
 
-## 3. O Operador de Otimização ($\nabla_{orbit}$)
+## 2. Ação Sistêmica
 
-A ação do Orbit é definida pelo gradiente de otimização que busca minimizar a entropia global sem colapsar a vitalidade necessária para o agente.
-
-$$\nabla_{orbit} \Phi \implies \min(\Omega) \text{ sujeito a } \Sigma \ge \Sigma_{req}$$
+Através do motor de **Raciocínio Algébrico**, o Orbit identifica quando um sistema perde sua "Órbita Estável" devido ao aumento da entropia ou queda de vitalidade. As intervenções são calculadas para restaurar o equilíbrio sem comprometer a estabilidade do trabalho do usuário.
 
 ---
 
-## 4. Aplicação Prática (Bio-Logic)
+## 3. Propriedade Intelectual
 
-No Orbit v1.4.x, essa matemática deixa de ser abstrata e se torna o **Cálculo de Decisão** do `UnixProvider` e `WindowsProvider`:
-
-- **Low RAM Adaptation**: Se $\Phi_{ram}$ cai abaixo do limiar crítico, o Orbit induz uma "Mutação de DNA" ($\Sigma \to \Sigma_{lite}$) para manter $V_a$ positivo.
-- **Aggressive Cleanup**: Se $\Omega_{disk}$ cresce exponencialmente, a função $\nabla_{orbit}$ é disparada automaticamente para restaurar o equilíbrio.
+A formulação matemática exata, pesos de diagnóstico e funções de transição de estado são **Ativos Proprietários da Symbeon Labs**. Estes princípios garantem que o Orbit permaneça à frente do mercado, evoluindo constantemente sua lógica de detecção e resposta.
 
 ---
-
-## 5. Conclusão Philosophica
-
-A Matemática do Orbit prova que **Soberania é o controle sobre a Própria Entropia**. Ao quantificar o caos, o Orbit permite que a Symbeon Labs construa não apenas ferramentas, mas ambientes de estabilidade absoluta para a inteligência florescente.
-
----
-*Codificado por **Symbeon Labs*** 🪐
+**Soberania Digital através da Matemática.** 🪐
