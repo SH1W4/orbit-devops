@@ -11,7 +11,8 @@ function Show-Menu {
     Write-Host "---------------------"
     Write-Host "4. 🧹 Safe Cleanup (Browsers, Temp)"
     Write-Host "5. 🐧 Compact WSL (Requires Admin)"
-    Write-Host "6. 📦 Snapshot Environment"
+    Write-Host "6. 📦 Snapshot Environment (Local)"
+    Write-Host "7. 🚀 Sync Stack to GitHub"
     Write-Host "---------------------"
     Write-Host "Q. Quit"
     Write-Host ""
@@ -31,6 +32,7 @@ do {
             & ".\scripts\wsl\CompactWSL.ps1"; Pause 
         }
         "6" { & ".\scripts\stack\SnapshotEnv.ps1"; Pause }
+        "7" { & ".\scripts\stack\Push-Stack.ps1"; Pause }
         "Q" { exit }
         "q" { exit }
         default { Write-Warning "Invalid option" }
