@@ -77,6 +77,11 @@ npm install -g @symbeon/orbit-devops
 
 ## ✨ Core Superpowers
 
+<div align="center">
+  <img src="docs/assets/orbit_ghost_hunt_1769555101583.png" alt="Ghost Hunt Scanner" width="80%" />
+</div>
+<br/>
+
 | Command | Platform | Action |
 | :--- | :--- | :--- |
 | `orbit doctor` | 🌍 All | **Full System Scan**: OS, RAM, and Storage health. |
