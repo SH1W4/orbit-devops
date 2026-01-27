@@ -7,6 +7,7 @@
 
   <p>
     <img src="https://img.shields.io/npm/v/@symbeon/orbit-devops?style=flat-square&color=cb3837" alt="NPM Version" />
+    <img src="https://github.com/SH1W4/orbit-devops/actions/workflows/ci.yml/badge.svg" alt="CI Status" />
     <img src="https://img.shields.io/badge/platform-Windows_11%20%7C%20WSL2-0078D6?style=flat-square&logo=windows" alt="Platform" />
     <img src="https://img.shields.io/badge/AI-MCP_Ready-purple?style=flat-square&logo=openai" alt="AI Ready" />
     <img src="https://img.shields.io/github/license/SH1W4/orbit-devops?style=flat-square" alt="License" />
