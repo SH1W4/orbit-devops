@@ -1,6 +1,6 @@
 ---
 name: orbit-devops
-description: Enterprise-grade toolkit for Windows workspace diagnostic, optimization, and lifecycle management.
+description: Enterprise-grade toolkit and Algebraic Reasoning Engine for Windows, Linux, and macOS workspace management.
 ---
 
 # Orbit-DevOps Skill
@@ -57,6 +57,5 @@ Agents should use the **MCP Server** located at `mcp/server.py` as the primary i
 
 ## Troubleshooting
 
+- **Algebraic Paradox**: If `solve_homeostasis` suggests an action that `run_safe_cleanup` cannot resolve, verify if the `DNA_DNAProfile` allows for `OPERATOR_MUTATION`.
 - **Path Issues**: Always use absolute paths or resolve them relative to the repository root.
-- **Admin Access**: If a script fails with "Access Denied", verify if it requires administrative privileges.
-- **WSL Errors**: Ensure WSL is not being held by active processes before running compaction.

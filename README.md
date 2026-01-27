@@ -16,7 +16,7 @@
  
  ---
  
- **Orbit-DevOps** is a professional-grade, **universal** CLI toolkit designed to reclaim GBs of "ghost" storage and optimize development stacks across **Windows, Linux, and macOS**.
+ **Orbit-DevOps** is a professional-grade, **universal** CLI toolkit and **Algebraic Reasoning Engine** designed to reclaim GBs of "ghost" storage and optimize development stacks across **Windows, Linux, and macOS**.
  
  > [!IMPORTANT]
  > **Read the [Orbit Thesis & Manifesto](./THESIS.md)** to understand the philosophy of **Biological Provisioning** and **Agentic Infrastructure**.
@@ -41,6 +41,9 @@
      Genome --> GRepo["agent-stack-dev Repo"]
      Genome --> Templates["Static DNAs"]
      Genome --> Mutate["Adaptive Rules"]
+    Genome --> Algebra["🔢 Symbiotic Algebra"]
+
+    Agentic --> Reasoning["Logic Reasoning Engine"]
  
      Universal --> Dash["Web Dashboard (Vite)"]
      Universal --> iOS["iOS Control Center"]
