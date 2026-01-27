@@ -1,5 +1,5 @@
 {
-  "name": "orbit-devops",
+  "name": "@symbeon/orbit-devops",
   "version": "1.0.0",
   "description": "The Developer's Workspace Command Center. Diagnose, Optimize, Compact, Control.",
   "main": "bin/orbit.js",
@@ -23,7 +23,7 @@
     "docker",
     "optimization"
   ],
-  "author": "SH1W4",
+  "author": "Symbeon",
   "license": "MIT",
   "type": "module",
   "bugs": {
