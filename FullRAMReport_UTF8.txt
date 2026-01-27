@@ -1,0 +1,1400 @@
+﻿=== AUDITORIA FORENSE DE RAM (100% DOS PROCESSOS) ===
+Data: 01/06/2026 15:49:19
+
+[1. RESUMO POR EMPRESA]
+Empresa:  | Count: 168 | Total RAM: 2616.29 MB
+Empresa: Microsoft Corporation | Count: 128 | Total RAM: 977.59 MB
+Empresa: Google LLC | Count: 15 | Total RAM: 822.05 MB
+Empresa: Notion Labs, Inc | Count: 7 | Total RAM: 114.05 MB
+Empresa: Perplexity | Count: 6 | Total RAM: 32.99 MB
+Empresa: NVIDIA Corporation | Count: 5 | Total RAM: 39.46 MB
+Empresa: OpenAI | Count: 5 | Total RAM: 29.19 MB
+Empresa: Docker Inc. | Count: 5 | Total RAM: 70.78 MB
+Empresa: ULIC Tek | Count: 4 | Total RAM: 58.45 MB
+Empresa:  | Count: 3 | Total RAM: 11.18 MB
+Empresa: Python Software Foundation | Count: 2 | Total RAM: 0.09 MB
+Empresa: Google LLC. | Count: 2 | Total RAM: 15.7 MB
+Empresa: Acer Inc. | Count: 1 | Total RAM: 0.87 MB
+Empresa: WhatsApp.Root | Count: 1 | Total RAM: 9.64 MB
+Empresa: Realtek Semiconductor | Count: 1 | Total RAM: 0.46 MB
+Empresa: LinkedIn | Count: 1 | Total RAM: 1.72 MB
+Empresa: Intel Corporation | Count: 1 | Total RAM: 0.56 MB
+Empresa: Intel | Count: 1 | Total RAM: 13.09 MB
+
+[2. LISTA COMPLETA DE PROCESSOS (TOP 200)]
+
+
+Name        : language_server_windows_x64
+Id          : 20016
+RAM_MB      : 1876,59
+Company     : 
+Description : 
+
+Name        : Antigravity
+Id          : 6424
+RAM_MB      : 508,47
+Company     : Google LLC
+Description : Antigravity
+
+Name        : msedge
+Id          : 28660
+RAM_MB      : 299,14
+Company     : Microsoft Corporation
+Description : Microsoft Edge
+
+Name        : Antigravity
+Id          : 22804
+RAM_MB      : 172,45
+Company     : Google LLC
+Description : Antigravity
+
+Name        : MsMpEng
+Id          : 5084
+RAM_MB      : 149
+Company     : 
+Description : 
+
+Name        : vmmemWSL
+Id          : 12052
+RAM_MB      : 128,34
+Company     : 
+Description : 
+
+Name        : powershell
+Id          : 30832
+RAM_MB      : 105,12
+Company     : Microsoft Corporation
+Description : Windows PowerShell
+
+Name        : Memory Compression
+Id          : 3160
+RAM_MB      : 99,55
+Company     : 
+Description : 
+
+Name        : msedge
+Id          : 4220
+RAM_MB      : 82,16
+Company     : Microsoft Corporation
+Description : Microsoft Edge
+
+Name        : Taskmgr
+Id          : 29504
+RAM_MB      : 66,05
+Company     : 
+Description : 
+
+Name        : pwsh
+Id          : 16948
+RAM_MB      : 63,27
+Company     : Microsoft Corporation
+Description : PowerShell 7
+
+Name        : Notion
+Id          : 17324
+RAM_MB      : 50,08
+Company     : Notion Labs, Inc
+Description : Notion
+
+Name        : com.docker.backend
+Id          : 28188
+RAM_MB      : 47,26
+Company     : Docker Inc.
+Description : Docker Desktop Backend
+
+Name        : msedge
+Id          : 6868
+RAM_MB      : 46,59
+Company     : Microsoft Corporation
+Description : Microsoft Edge
+
+Name        : explorer
+Id          : 11328
+RAM_MB      : 46,29
+Company     : Microsoft Corporation
+Description : Windows Explorer
+
+Name        : Antigravity
+Id          : 7836
+RAM_MB      : 44,81
+Company     : Google LLC
+Description : Antigravity
+
+Name        : pwsh
+Id          : 17180
+RAM_MB      : 37,89
+Company     : Microsoft Corporation
+Description : PowerShell 7
+
+Name        : Secure System
+Id          : 188
+RAM_MB      : 32,77
+Company     : 
+Description : 
+
+Name        : Antigravity
+Id          : 24196
+RAM_MB      : 28,54
+Company     : Google LLC
+Description : Antigravity
+
+Name        : NitroSense
+Id          : 19252
+RAM_MB      : 28,21
+Company     : ULIC Tek
+Description : NitroSense
+
+Name        : Antigravity
+Id          : 30992
+RAM_MB      : 24,46
+Company     : Google LLC
+Description : Antigravity
+
+Name        : Notion
+Id          : 18624
+RAM_MB      : 23,57
+Company     : Notion Labs, Inc
+Description : Notion
+
+Name        : msedgewebview2
+Id          : 14688
+RAM_MB      : 23,21
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : Notion
+Id          : 9452
+RAM_MB      : 22,29
+Company     : Notion Labs, Inc
+Description : Notion
+
+Name        : esrv_svc
+Id          : 25464
+RAM_MB      : 21,62
+Company     : 
+Description : 
+
+Name        : msedgewebview2
+Id          : 13920
+RAM_MB      : 20,8
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : dwm
+Id          : 1752
+RAM_MB      : 20,26
+Company     : 
+Description : 
+
+Name        : SearchIndexer
+Id          : 6852
+RAM_MB      : 17,95
+Company     : 
+Description : 
+
+Name        : msedgewebview2
+Id          : 22908
+RAM_MB      : 17,76
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : NitroSense
+Id          : 18780
+RAM_MB      : 16,46
+Company     : ULIC Tek
+Description : NitroSense
+
+Name        : Docker Desktop
+Id          : 25892
+RAM_MB      : 16,21
+Company     : Docker Inc.
+Description : Docker Desktop
+
+Name        : NVIDIA Overlay
+Id          : 4044
+RAM_MB      : 16,06
+Company     : NVIDIA Corporation
+Description : NVIDIA App
+
+Name        : GoogleDriveFS
+Id          : 13740
+RAM_MB      : 15,71
+Company     : Google LLC.
+Description : Google Drive
+
+Name        : Antigravity
+Id          : 18204
+RAM_MB      : 15,22
+Company     : Google LLC
+Description : Antigravity
+
+Name        : msedgewebview2
+Id          : 23112
+RAM_MB      : 14,97
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : msedgewebview2
+Id          : 6776
+RAM_MB      : 13,38
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : DSATray
+Id          : 17796
+RAM_MB      : 13,1
+Company     : Intel
+Description : Intel Driver & Support 
+              Assistant Tray
+
+Name        : ChatGPT
+Id          : 15680
+RAM_MB      : 12,91
+Company     : OpenAI
+Description : ChatGPT
+
+Name        : msedgewebview2
+Id          : 4488
+RAM_MB      : 12,6
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : Notion
+Id          : 17692
+RAM_MB      : 11,9
+Company     : Notion Labs, Inc
+Description : Notion
+
+Name        : Antigravity
+Id          : 22844
+RAM_MB      : 11,68
+Company     : Google LLC
+Description : Antigravity
+
+Name        : msedgewebview2
+Id          : 7312
+RAM_MB      : 11,61
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : NVIDIA Overlay
+Id          : 12360
+RAM_MB      : 11,33
+Company     : NVIDIA Corporation
+Description : NVIDIA App
+
+Name        : msedgewebview2
+Id          : 23916
+RAM_MB      : 10,8
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : NitroSense
+Id          : 19176
+RAM_MB      : 10,58
+Company     : ULIC Tek
+Description : NitroSense
+
+Name        : Perplexity
+Id          : 16936
+RAM_MB      : 10,08
+Company     : Perplexity
+Description : Perplexity
+
+Name        : svchost
+Id          : 4920
+RAM_MB      : 9,9
+Company     : 
+Description : 
+
+Name        : msedgewebview2
+Id          : 15272
+RAM_MB      : 9,8
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : WhatsApp.Root
+Id          : 18388
+RAM_MB      : 9,76
+Company     : WhatsApp.Root
+Description : WhatsApp.Root
+
+Name        : Antigravity
+Id          : 13432
+RAM_MB      : 9,61
+Company     : Google LLC
+Description : Antigravity
+
+Name        : Perplexity
+Id          : 18160
+RAM_MB      : 8,34
+Company     : Perplexity
+Description : Perplexity
+
+Name        : OneDrive
+Id          : 10288
+RAM_MB      : 8,22
+Company     : Microsoft Corporation
+Description : Microsoft OneDrive
+
+Name        : ChatGPT
+Id          : 22364
+RAM_MB      : 7,65
+Company     : OpenAI
+Description : ChatGPT
+
+Name        : msedge
+Id          : 5612
+RAM_MB      : 7,43
+Company     : Microsoft Corporation
+Description : Microsoft Edge
+
+Name        : svchost
+Id          : 1472
+RAM_MB      : 7,41
+Company     : 
+Description : 
+
+Name        : OneApp.IGCC.WinService
+Id          : 5592
+RAM_MB      : 7,33
+Company     : 
+Description : 
+
+Name        : NVIDIA Overlay
+Id          : 13100
+RAM_MB      : 7,32
+Company     : NVIDIA Corporation
+Description : NVIDIA App
+
+Name        : DSAService
+Id          : 5196
+RAM_MB      : 7,18
+Company     : 
+Description : 
+
+Name        : msedge
+Id          : 33676
+RAM_MB      : 6,75
+Company     : Microsoft Corporation
+Description : Microsoft Edge
+
+Name        : svchost
+Id          : 2568
+RAM_MB      : 6,6
+Company     : 
+Description : 
+
+Name        : svchost
+Id          : 3776
+RAM_MB      : 6,53
+Company     : 
+Description : 
+
+Name        : gamingservices
+Id          : 3300
+RAM_MB      : 6,27
+Company     : 
+Description : 
+
+Name        : msedgewebview2
+Id          : 23316
+RAM_MB      : 6,04
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : AcerEZService
+Id          : 5576
+RAM_MB      : 5,74
+Company     : 
+Description : 
+
+Name        : svchost
+Id          : 4896
+RAM_MB      : 5,71
+Company     : 
+Description : 
+
+Name        : Perplexity
+Id          : 13532
+RAM_MB      : 5,63
+Company     : Perplexity
+Description : Perplexity
+
+Name        : RuntimeBroker
+Id          : 11688
+RAM_MB      : 5,52
+Company     : Microsoft Corporation
+Description : Runtime Broker
+
+Name        : TextInputHost
+Id          : 15368
+RAM_MB      : 5,52
+Company     : Microsoft Corporation
+Description : 
+
+Name        : svchost
+Id          : 22144
+RAM_MB      : 5,44
+Company     : 
+Description : 
+
+Name        : ms-teams
+Id          : 7164
+RAM_MB      : 5,44
+Company     : Microsoft Corporation
+Description : Microsoft Teams
+
+Name        : lsass
+Id          : 1212
+RAM_MB      : 5,39
+Company     : 
+Description : 
+
+Name        : svchost
+Id          : 2936
+RAM_MB      : 5,36
+Company     : 
+Description : 
+
+Name        : svchost
+Id          : 1340
+RAM_MB      : 5,01
+Company     : 
+Description : 
+
+Name        : NVDisplay.Container
+Id          : 2792
+RAM_MB      : 4,96
+Company     : 
+Description : 
+
+Name        : ChatGPT
+Id          : 15852
+RAM_MB      : 4,8
+Company     : OpenAI
+Description : ChatGPT
+
+Name        : Perplexity
+Id          : 18400
+RAM_MB      : 4,79
+Company     : Perplexity
+Description : Perplexity
+
+Name        : msedgewebview2
+Id          : 13816
+RAM_MB      : 4,72
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : nvcontainer
+Id          : 9212
+RAM_MB      : 4,61
+Company     : 
+Description : 
+
+Name        : msedge
+Id          : 31584
+RAM_MB      : 4,57
+Company     : Microsoft Corporation
+Description : Microsoft Edge
+
+Name        : msedgewebview2
+Id          : 20504
+RAM_MB      : 4,5
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : svchost
+Id          : 4392
+RAM_MB      : 4,48
+Company     : 
+Description : 
+
+Name        : svchost
+Id          : 13700
+RAM_MB      : 4,45
+Company     : 
+Description : 
+
+Name        : msedgewebview2
+Id          : 7424
+RAM_MB      : 4,37
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : NisSrv
+Id          : 16368
+RAM_MB      : 4,33
+Company     : 
+Description : 
+
+Name        : pwsh
+Id          : 24520
+RAM_MB      : 4,29
+Company     : Microsoft Corporation
+Description : PowerShell 7
+
+Name        : pwsh
+Id          : 25172
+RAM_MB      : 4,24
+Company     : Microsoft Corporation
+Description : PowerShell 7
+
+Name        : msedgewebview2
+Id          : 15920
+RAM_MB      : 4,23
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : RuntimeBroker
+Id          : 16796
+RAM_MB      : 4,23
+Company     : Microsoft Corporation
+Description : Runtime Broker
+
+Name        : com.docker.build
+Id          : 21972
+RAM_MB      : 4,22
+Company     : 
+Description : 
+
+Name        : Perplexity
+Id          : 2640
+RAM_MB      : 4,2
+Company     : Perplexity
+Description : Perplexity
+
+Name        : svchost
+Id          : 3064
+RAM_MB      : 4,16
+Company     : 
+Description : 
+
+Name        : SearchHost
+Id          : 13620
+RAM_MB      : 4,14
+Company     : Microsoft Corporation
+Description : 
+
+Name        : StartMenuExperienceHost
+Id          : 13964
+RAM_MB      : 4,05
+Company     : Microsoft Corporation
+Description : Windows Start Experience Host
+
+Name        : ChatGPT
+Id          : 16020
+RAM_MB      : 3,92
+Company     : OpenAI
+Description : ChatGPT
+
+Name        : pwsh
+Id          : 9488
+RAM_MB      : 3,91
+Company     : Microsoft Corporation
+Description : PowerShell 7
+
+Name        : msedgewebview2
+Id          : 15528
+RAM_MB      : 3,86
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : svchost
+Id          : 9980
+RAM_MB      : 3,84
+Company     : 
+Description : 
+
+Name        : NitroSense
+Id          : 19120
+RAM_MB      : 3,78
+Company     : ULIC Tek
+Description : NitroSense
+
+Name        : svchost
+Id          : 4496
+RAM_MB      : 3,66
+Company     : 
+Description : 
+
+Name        : msedgewebview2
+Id          : 20520
+RAM_MB      : 3,57
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : msedgewebview2
+Id          : 7252
+RAM_MB      : 3,57
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : NVIDIA Overlay
+Id          : 12340
+RAM_MB      : 3,55
+Company     : NVIDIA Corporation
+Description : NVIDIA App
+
+Name        : Docker Desktop
+Id          : 25192
+RAM_MB      : 3,53
+Company     : Docker Inc.
+Description : Docker Desktop
+
+Name        : nvcontainer
+Id          : 9192
+RAM_MB      : 3,52
+Company     : 
+Description : 
+
+Name        : WUDFHost
+Id          : 1380
+RAM_MB      : 3,52
+Company     : 
+Description : 
+
+Name        : services
+Id          : 1184
+RAM_MB      : 3,36
+Company     : 
+Description : 
+
+Name        : Notion
+Id          : 7880
+RAM_MB      : 3,25
+Company     : Notion Labs, Inc
+Description : Notion
+
+Name        : msedgewebview2
+Id          : 23100
+RAM_MB      : 3,25
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : msedgewebview2
+Id          : 15572
+RAM_MB      : 3,17
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : vmwp
+Id          : 23820
+RAM_MB      : 3,14
+Company     : 
+Description : 
+
+Name        : esrv
+Id          : 2824
+RAM_MB      : 3,14
+Company     : 
+Description : 
+
+Name        : msedgewebview2
+Id          : 10492
+RAM_MB      : 2,98
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : backgroundTaskHost
+Id          : 27864
+RAM_MB      : 2,97
+Company     : Microsoft Corporation
+Description : Background Task Host
+
+Name        : SurSvc
+Id          : 5044
+RAM_MB      : 2,88
+Company     : 
+Description : 
+
+Name        : svchost
+Id          : 14280
+RAM_MB      : 2,8
+Company     : Microsoft Corporation
+Description : Processo de Host para 
+              Serviços do Windows
+
+Name        : svchost
+Id          : 10352
+RAM_MB      : 2,76
+Company     : Microsoft Corporation
+Description : Processo de Host para 
+              Serviços do Windows
+
+Name        : Widgets
+Id          : 13872
+RAM_MB      : 2,75
+Company     : Microsoft Corporation
+Description : 
+
+Name        : AcerPixyService
+Id          : 5540
+RAM_MB      : 2,66
+Company     : 
+Description : 
+
+Name        : Notion
+Id          : 5184
+RAM_MB      : 2,59
+Company     : Notion Labs, Inc
+Description : Notion
+
+Name        : DSAUpdateService
+Id          : 5304
+RAM_MB      : 2,57
+Company     : 
+Description : 
+
+Name        : svchost
+Id          : 4904
+RAM_MB      : 2,5
+Company     : 
+Description : 
+
+Name        : RuntimeBroker
+Id          : 4068
+RAM_MB      : 2,29
+Company     : Microsoft Corporation
+Description : Runtime Broker
+
+Name        : svchost
+Id          : 11704
+RAM_MB      : 2,23
+Company     : 
+Description : 
+
+Name        : Docker Desktop
+Id          : 28748
+RAM_MB      : 2,23
+Company     : Docker Inc.
+Description : Docker Desktop
+
+Name        : MpDefenderCoreService
+Id          : 5076
+RAM_MB      : 2,2
+Company     : 
+Description : 
+
+Name        : msedgewebview2
+Id          : 18684
+RAM_MB      : 2,19
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : svchost
+Id          : 3416
+RAM_MB      : 2,08
+Company     : 
+Description : 
+
+Name        : vmcompute
+Id          : 21728
+RAM_MB      : 2,05
+Company     : 
+Description : 
+
+Name        : svchost
+Id          : 12788
+RAM_MB      : 2
+Company     : 
+Description : 
+
+Name        : msedge
+Id          : 25060
+RAM_MB      : 1,91
+Company     : Microsoft Corporation
+Description : Microsoft Edge
+
+Name        : PhoneExperienceHost
+Id          : 22116
+RAM_MB      : 1,89
+Company     : Microsoft Corporation
+Description : Microsoft Phone Link
+
+Name        : msedgewebview2
+Id          : 8060
+RAM_MB      : 1,82
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : msedgewebview2
+Id          : 15804
+RAM_MB      : 1,82
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : msrdc
+Id          : 25792
+RAM_MB      : 1,79
+Company     : Microsoft Corporation
+Description : Área de Trabalho Remota
+
+Name        : svchost
+Id          : 4088
+RAM_MB      : 1,78
+Company     : 
+Description : 
+
+Name        : svchost
+Id          : 2420
+RAM_MB      : 1,76
+Company     : 
+Description : 
+
+Name        : LinkedIn
+Id          : 6056
+RAM_MB      : 1,75
+Company     : LinkedIn
+Description : LinkedIn
+
+Name        : powershell
+Id          : 33128
+RAM_MB      : 1,75
+Company     : Microsoft Corporation
+Description : Windows PowerShell
+
+Name        : svchost
+Id          : 4056
+RAM_MB      : 1,74
+Company     : 
+Description : 
+
+Name        : com.docker.backend
+Id          : 29448
+RAM_MB      : 1,72
+Company     : Docker Inc.
+Description : Docker Desktop Backend
+
+Name        : svchost
+Id          : 19192
+RAM_MB      : 1,68
+Company     : 
+Description : 
+
+Name        : taskhostw
+Id          : 10796
+RAM_MB      : 1,68
+Company     : Microsoft Corporation
+Description : Processo de Host para 
+              Tarefas do Windows
+
+Name        : spoolsv
+Id          : 4588
+RAM_MB      : 1,67
+Company     : 
+Description : 
+
+Name        : msedgewebview2
+Id          : 16828
+RAM_MB      : 1,65
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : msedge
+Id          : 7776
+RAM_MB      : 1,62
+Company     : Microsoft Corporation
+Description : Microsoft Edge
+
+Name        : Antigravity
+Id          : 18500
+RAM_MB      : 1,57
+Company     : Google LLC
+Description : Antigravity
+
+Name        : Antigravity
+Id          : 28432
+RAM_MB      : 1,55
+Company     : Google LLC
+Description : Antigravity
+
+Name        : svchost
+Id          : 1540
+RAM_MB      : 1,54
+Company     : 
+Description : 
+
+Name        : Antigravity
+Id          : 25112
+RAM_MB      : 1,53
+Company     : Google LLC
+Description : Antigravity
+
+Name        : svchost
+Id          : 4436
+RAM_MB      : 1,5
+Company     : 
+Description : 
+
+Name        : sihost
+Id          : 10276
+RAM_MB      : 1,47
+Company     : Microsoft Corporation
+Description : Shell Infrastructure Host
+
+Name        : svchost
+Id          : 3708
+RAM_MB      : 1,4
+Company     : 
+Description : 
+
+Name        : NVIDIA Overlay
+Id          : 12508
+RAM_MB      : 1,36
+Company     : NVIDIA Corporation
+Description : NVIDIA App
+
+Name        : msedge
+Id          : 31064
+RAM_MB      : 1,36
+Company     : Microsoft Corporation
+Description : Microsoft Edge
+
+Name        : AcerCentralService
+Id          : 5136
+RAM_MB      : 1,35
+Company     : 
+Description : 
+
+Name        : msedgewebview2
+Id          : 15864
+RAM_MB      : 1,32
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : ipfsvc
+Id          : 5504
+RAM_MB      : 1,31
+Company     : 
+Description : 
+
+Name        : svchost
+Id          : 20080
+RAM_MB      : 1,3
+Company     : 
+Description : 
+
+Name        : svchost
+Id          : 1996
+RAM_MB      : 1,29
+Company     : 
+Description : 
+
+Name        : svchost
+Id          : 2392
+RAM_MB      : 1,28
+Company     : 
+Description : 
+
+Name        : msedgewebview2
+Id          : 20592
+RAM_MB      : 1,27
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : msedge
+Id          : 388
+RAM_MB      : 1,26
+Company     : Microsoft Corporation
+Description : Microsoft Edge
+
+Name        : msedgewebview2
+Id          : 20752
+RAM_MB      : 1,23
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : conhost
+Id          : 27540
+RAM_MB      : 1,22
+Company     : Microsoft Corporation
+Description : Host da Janela do Console
+
+Name        : msedgewebview2
+Id          : 21048
+RAM_MB      : 1,22
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : WindowsPackageManagerServer
+Id          : 20312
+RAM_MB      : 1,22
+Company     : Microsoft Corporation
+Description : WindowsPackageManagerServer.e
+              xe
+
+Name        : msedgewebview2
+Id          : 23560
+RAM_MB      : 1,21
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : AQAUserPS
+Id          : 9544
+RAM_MB      : 1,21
+Company     : 
+Description : 
+
+Name        : msedge
+Id          : 31892
+RAM_MB      : 1,2
+Company     : Microsoft Corporation
+Description : Microsoft Edge
+
+Name        : IntelAudioService
+Id          : 5348
+RAM_MB      : 1,2
+Company     : 
+Description : 
+
+Name        : svchost
+Id          : 16604
+RAM_MB      : 1,18
+Company     : 
+Description : 
+
+Name        : AggregatorHost
+Id          : 12900
+RAM_MB      : 1,18
+Company     : 
+Description : 
+
+Name        : msedge
+Id          : 26632
+RAM_MB      : 1,18
+Company     : Microsoft Corporation
+Description : Microsoft Edge
+
+Name        : msedge
+Id          : 5692
+RAM_MB      : 1,17
+Company     : Microsoft Corporation
+Description : Microsoft Edge
+
+Name        : msedgewebview2
+Id          : 23176
+RAM_MB      : 1,14
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : svchost
+Id          : 7840
+RAM_MB      : 1,12
+Company     : 
+Description : 
+
+Name        : Registry
+Id          : 232
+RAM_MB      : 1,12
+Company     : 
+Description : 
+
+Name        : AcerServiceWrapper
+Id          : 5188
+RAM_MB      : 1,11
+Company     : 
+Description : 
+
+Name        : svchost
+Id          : 29244
+RAM_MB      : 1,1
+Company     : 
+Description : 
+
+Name        : Antigravity
+Id          : 24784
+RAM_MB      : 1,1
+Company     : Google LLC
+Description : Antigravity
+
+Name        : csrss
+Id          : 1116
+RAM_MB      : 1,05
+Company     : 
+Description : 
+
+Name        : msedgewebview2
+Id          : 24136
+RAM_MB      : 1,05
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : msedgewebview2
+Id          : 18104
+RAM_MB      : 1,03
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : RuntimeBroker
+Id          : 25340
+RAM_MB      : 0,98
+Company     : Microsoft Corporation
+Description : Runtime Broker
+
+Name        : msedge
+Id          : 25544
+RAM_MB      : 0,96
+Company     : Microsoft Corporation
+Description : Microsoft Edge
+
+Name        : svchost
+Id          : 2708
+RAM_MB      : 0,95
+Company     : 
+Description : 
+
+Name        : telemetry_agent
+Id          : 8116
+RAM_MB      : 0,94
+Company     : 
+Description : 
+
+Name        : taskhostw
+Id          : 8372
+RAM_MB      : 0,92
+Company     : 
+Description : 
+
+Name        : AcerGAICameraW
+Id          : 18556
+RAM_MB      : 0,92
+Company     : Acer Inc.
+Description : Acer GAI Camera Windows
+
+Name        : RuntimeBroker
+Id          : 27012
+RAM_MB      : 0,9
+Company     : Microsoft Corporation
+Description : Runtime Broker
+
+Name        : svchost
+Id          : 2664
+RAM_MB      : 0,88
+Company     : 
+Description : 
+
+Name        : svchost
+Id          : 20156
+RAM_MB      : 0,86
+Company     : Microsoft Corporation
+Description : Processo de Host para 
+              Serviços do Windows
+
+Name        : Antigravity
+Id          : 24792
+RAM_MB      : 0,84
+Company     : Google LLC
+Description : Antigravity
+
+Name        : svchost
+Id          : 5156
+RAM_MB      : 0,84
+Company     : 
+Description : 
+
+Name        : unsecapp
+Id          : 7444
+RAM_MB      : 0,83
+Company     : 
+Description : 
+
+Name        : unsecapp
+Id          : 13664
+RAM_MB      : 0,83
+Company     : 
+Description : 
+
+Name        : msedgewebview2
+Id          : 2716
+RAM_MB      : 0,81
+Company     : Microsoft Corporation
+Description : Microsoft Edge WebView2
+
+Name        : svchost
+Id          : 1932
+RAM_MB      : 0,75
+Company     : 
+Description : 
+
+Name        : AcerDIAgent
+Id          : 5096
+RAM_MB      : 0,74
+Company     : 
+Description : 
+
+Name        : AcerCCAgent
+Id          : 4112
+RAM_MB      : 0,74
+Company     : 
+Description : 
+
+
+
+
+
+[3. SERVICOS DO WINDOWS ATIVOS]
+
+Name                            DisplayName
+----                            -----------
+AASSvc                          Acer Age...
+AcerARTAIMMXDriverService       AcerARTA...
+AcerARTAIMMXService             AcerARTA...
+AcerCCAgentSvis                 Acer Car...
+AcerDeviceEnablingServiceV2     Acer Dev...
+AcerDIAgentSvis                 Acer Dev...
+AcerEZSvc                       Acer Exp...
+AcerGAICameraService            AcerGAIC...
+AcerLightingService             Acer Lig...
+AcerPixyService                 AcerPixy...
+AcerQAAgentSvis                 Acer Qui...
+AcerServiceSvc                  Acer Ser...
+Appinfo                         Informaç...
+AppXSvc                         Serviço ...
+ASMSvc                          Acer Sys...
+AudioEndpointBuilder            Construt...
+Audiosrv                        Áudio do...
+BFE                             Mecanism...
+BluetoothUserService_c2627      Bluetoot...
+BrokerInfrastructure            Serviço ...
+BTAGService                     Serviço ...
+BthAvctpSvc                     Serviço ...
+bthserv                         Serviço ...
+camsvc                          Serviço ...
+cbdhsvc_c2627                   cbdhsvc_...
+CDPSvc                          Serviço ...
+CDPUserSvc_c2627                CDPUserS...
+CoreMessagingRegistrar          CoreMess...
+cplspcon                        Intel(R)...
+CryptSvc                        Serviços...
+DcomLaunch                      Iniciali...
+DeviceAssociationService        Serviço ...
+DeviceInstall                   Serviço ...
+Dhcp                            Cliente ...
+DiagTrack                       Experiên...
+DispBrokerDesktopSvc            Exibir S...
+DisplayEnhancementService       Serviço ...
+Dnscache                        Cliente DNS
+DoSvc                           Otimizaç...
+DPS                             Serviço ...
+dptftcs                         Intel(R)...
+DSAService                      Intel(R)...
+DSAUpdateService                Intel(R)...
+DtsApo4Service                  DtsApo4S...
+DusmSvc                         Uso de D...
+ESRV_SVC_QUEENCREEK             Energy S...
+EventLog                        Log de E...
+EventSystem                     COM+ eve...
+FontCache                       Serviço ...
+GamingServices                  Gaming S...
+GamingServicesNet               Gaming S...
+gpsvc                           Cliente ...
+hidserv                         Serviço ...
+hns                             Serviço ...
+HvHost                          Serviço ...
+igccservice                     Intel(R)...
+InstallService                  Serviço ...
+IntelAudioService               Intel(R)...
+IntelCollectorService           Intel(R)...
+IntelTelemetryAgent             Intel(R)...
+InventorySvc                    Serviço ...
+ipfsvc                          Intel(R)...
+iphlpsvc                        Auxiliar...
+jhi_service                     Intel(R)...
+KeyIso                          Isolamen...
+LanmanServer                    Server     
+LanmanWorkstation               Estação ...
+lfsvc                           Serviço ...
+LicenseManager                  Serviço ...
+lmhosts                         Auxiliar...
+LSM                             Gerencia...
+MDCoreSvc                       MDCoreSvc  
+mpssvc                          Windows ...
+NcbService                      Agente d...
+netprofm                        Serviço ...
+NPSMSvc_c2627                   NPSMSvc_...
+nsi                             Serviço ...
+nvagent                         Serviço ...
+NvContainerLocalSystem          NVIDIA L...
+NVDisplay.ContainerLocalSystem  NVIDIA D...
+OneSyncSvc_c2627                OneSyncS...
+PcaSvc                          Serviço ...
+PhoneSvc                        Serviço ...
+PimIndexMaintenanceSvc_c2627    PimIndex...
+PlugPlay                        Plug and...
+Power                           Desligar   
+ProfSvc                         Serviço ...
+RasMan                          Gerencia...
+RmSvc                           Serviço ...
+RpcEptMapper                    Mapeador...
+RpcSs                           RPC (Cha...
+RtkAudioUniversalService        Realtek ...
+SamSs                           Gerente ...
+Schedule                        Agendado...
+SecurityHealthService           Serviço ...
+SENS                            Serviço ...
+SharedAccess                    ICS (Com...
+ShellHWDetection                Detecção...
+Spooler                         Spooler ...
+SSDPSRV                         Descober...
+ssh-agent                       OpenSSH ...
+SstpSvc                         Serviço ...
+StateRepository                 Serviço ...
+StiSvc                          Assisten...
+StorSvc                         Serviço ...
+SysMain                         SysMain    
+SystemEventsBroker              Agente d...
+SystemUsageReportSvc_QUEENCREEK Intel(R)...
+TextInputManagementService      Serviço ...
+Themes                          Temas      
+TimeBrokerSvc                   Agente d...
+TokenBroker                     Gerencia...
+TrkWks                          Cliente ...
+UdkUserSvc_c2627                UdkUserS...
+UnistoreSvc_c2627               Unistore...
+UserDataSvc_c2627               UserData...
+UserManager                     Gerencia...
+UsoSvc                          Serviço ...
+VaultSvc                        Gerencia...
+vmcompute                       Serviço ...
+Wcmsvc                          Gerencia...
+WdiSystemHost                   Host do ...
+WdNisSvc                        Serviço ...
+webthreatdefsvc                 Serviço ...
+webthreatdefusersvc_c2627       webthrea...
+whesvc                          Integrid...
+WinDefend                       Serviço ...
+WinHttpAutoProxySvc             Serviço ...
+Winmgmt                         Testador...
+WlanSvc                         Configur...
+WMIRegistrationService          Intel(R)...
+WpnService                      Serviço ...
+WpnUserService_c2627            WpnUserS...
+WSAIFabricSvc                   WSAIFabr...
+wscsvc                          Central ...
+WSearch                         Windows ...
+WSLService                      WSL Service
+
+
+
+
+[4. ANALISE DO ACER CLUSTER]
+Acer Process: AcerAgentService | Size: 0.13 MB | Desc: 
+Acer Process: AcerCCAgent | Size: 0.74 MB | Desc: 
+Acer Process: AcerCentralService | Size: 1.35 MB | Desc: 
+Acer Process: AcerDIAgent | Size: 0.74 MB | Desc: 
+Acer Process: AcerEZService | Size: 5.74 MB | Desc: 
+Acer Process: AcerGAICameraService | Size: 0.02 MB | Desc: 
+Acer Process: AcerGAICameraW | Size: 0.92 MB | Desc: Acer GAI Camera Windows
+Acer Process: AcerHardwareService | Size: 0.25 MB | Desc: 
+Acer Process: AcerLightingService | Size: 0.03 MB | Desc: 
+Acer Process: AcerPixyService | Size: 2.66 MB | Desc: 
+Acer Process: AcerQAAgent | Size: 0.73 MB | Desc: 
+Acer Process: AcerService | Size: 0.55 MB | Desc: 
+Acer Process: AcerServiceWrapper | Size: 1.11 MB | Desc: 
+Acer Process: AcerSysHardwareService | Size: 0.24 MB | Desc: 
+Acer Process: AcerSysMonitorService | Size: 0.13 MB | Desc: 
+Acer Process: AcerSystemCentralService | Size: 0.59 MB | Desc: 
+
+=== FIM DO RELATORIO ===

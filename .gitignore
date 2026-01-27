@@ -1,45 +1,20 @@
-# Logs and temporary files
-*.log
-*.txt
-!README.txt
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
 
-# PowerShell specific
-*.ps1xml
-
-# Windows specific
+# OS
+.DS_Store
 Thumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-*.lnk
 
-# Diagnostic output
-RESULTS/
-*_Report_*.txt
-*_LOG.txt
-diagnostico_sistema_*.txt
-
-# Temporary markdown reports (keep templates)
-LATEST_DIAGNOSTIC_RESULTS.md
-FINAL_REPORT.md
-FINAL_STATUS.md
-STATUS_FINAL.md
-MISSAO_CUMPRIDA.md
-RELATORIO_FINAL_COMPLETO.md
-CLEANUP_PLAN.md
-CURSOR_RESCUE_PLAN.md
-TOTAL_CLEANUP.md
-
-# User-specific
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
 
-# OS generated
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
+# Logs
+*.log
+diagnostico_*.txt

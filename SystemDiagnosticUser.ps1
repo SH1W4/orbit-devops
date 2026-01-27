@@ -49,7 +49,7 @@ Get-Volume | Where-Object { $_.DriveLetter } | ForEach-Object {
     if ($pctFree -lt 10) { $status = "CRÍTICO (<10% livre)" }
     elseif ($pctFree -lt 20) { $status = "ALERTA (<20% livre)" }
     
-    Write-Log ("Drive " + $_.DriveLetter + ": " + $free + " GB livres de " + $total + " GB (" + $pctFree + " percent) - " + $status)
+    Write-Log "Drive $($_.DriveLetter): $free GB livres de $total GB ($pctFree%) - $status"
 }
 
 # 4. Network
