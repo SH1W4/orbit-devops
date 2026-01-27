@@ -15,7 +15,7 @@ const program = new Command();
 program
   .name('orbit')
   .description('Orbit-DevOps: The Developer\'s Workspace Command Center')
-  .version('1.0.0');
+  .version('1.1.0');
 
 import fs from 'fs';
 
@@ -53,21 +53,21 @@ program
   .command('doctor')
   .description('Run a full system diagnostic health check')
   .action(() => {
-    runScript('SystemDiagnosticUser_v2.ps1');
+    runScript('scripts/diagnostic/SystemDiagnosticUser_v2.ps1');
   });
 
 program
   .command('space')
   .description('Analyze disk usage and find hotspots')
   .action(() => {
-    runScript('ScanStorage.ps1');
+    runScript('scripts/diagnostic/ScanStorage.ps1');
   });
 
 program
   .command('clean')
   .description('Perform safe system and dev-tool cleanup')
   .action(() => {
-    runScript('AdditionalCleanup.ps1');
+    runScript('scripts/cleanup/AdditionalCleanup.ps1');
   });
 
 program
@@ -89,7 +89,7 @@ program
   .command('menu')
   .description('Launch the interactive PowerShell menu (Legacy)')
   .action(() => {
-    runScript('Orbit.ps1');
+    runScript('scripts/core/Orbit.ps1');
   });
 
 program.parse(process.argv);

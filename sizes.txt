@@ -1,6 +1,0 @@
-=== TARGETED FILE SIZES ===
-ext4.vhdx : 0.12 GB
-docker_data.vhdx : 24.75 GB
-The_Matrix_Path_of_Neo_Win_ISO_EN.7z : 3.42 GB
-The_Matrix_Path_of_Neo_Win_Files_EN.7z : 0.65 GB
-560.81-notebook-win10-win11-64bit-international-dch-whql.exe : 0.65 GB
