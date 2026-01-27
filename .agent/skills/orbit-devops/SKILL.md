@@ -28,10 +28,11 @@ To reclaim space safely:
 2. Clean `npm-cache` using `npm cache clean --force` if large Node.js footprints are detected.
 3. Use `scripts/wsl/CompactWSL.ps1` (requires admin) to "squeeze" WSL2 virtual disks.
 
-### 3. Environment DNA Management
+### 3. Environment DNA Management & Genome Integration
 To ensure a portable and safe environment:
 1. Use `scripts/stack/SnapshotEnv.ps1` to generate a local `dev-stack.json`.
-2. Use `scripts/stack/Push-Stack.ps1` to sync the environment DNA to the `SH1W4/stack` repository.
+2. Access the **Genome Library** via the [agent-stack-dev](https://github.com/SH1W4/agent-stack-dev) skill to pull standardized Agent DNAs.
+3. Apply adaptive provisioning rules from `logic/` to mutate the environment based on machine constraints.
 
 ## Capabilities Mapping
 
