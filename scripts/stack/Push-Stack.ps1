@@ -1,8 +1,31 @@
 # Orbit-DevOps: Sync Stack to GitHub
 # Generates a fresh dev-stack.json and pushes it to the remote repository
 
-$stackRepoPath = "c:\Users\João\Desktop\PROJETOS\stack"
-$orbitStackPath = "$env:USERPROFILE\Desktop\PROJETOS\04_DEVELOPER_TOOLS\orbit-devops\dev-stack.json"
+# Determine the Stack Repository Path
+# 1. Check Environment Variable
+# 2. Try to find a 'stack' directory in the parent folder of the project
+$stackRepoPath = $env:ORBIT_STACK_PATH
+
+if (-not $stackRepoPath) {
+    # Calculate likely path (neighbor to orbit-devops directory)
+    # We use $PSScriptRoot and go up to the workspace root
+    $currentScriptDir = $PSScriptRoot
+    $parentDir = Split-Path (Split-Path $currentScriptDir -Parent) -Parent
+    $candidate = Join-Path $parentDir "stack"
+    
+    if (Test-Path $candidate) {
+        $stackRepoPath = $candidate
+    }
+}
+
+if (-not $stackRepoPath -or -not (Test-Path $stackRepoPath)) {
+    Write-Host "⚠️  Stack repository not found!" -ForegroundColor Red
+    Write-Host "To use 'orbit sync', please:" -ForegroundColor Yellow
+    Write-Host "1. Create a repository for your environment DNA (e.g., 'stack')."
+    Write-Host "2. Set the environment variable ORBIT_STACK_PATH to that folder."
+    Write-Host "   Example: [System.Environment]::SetEnvironmentVariable('ORBIT_STACK_PATH', 'C:\Path\To\Stack', 'User')"
+    exit 1
+}
 
 Write-Host "🪐 Orbit-DevOps: Stack Sync" -ForegroundColor Cyan
 
