@@ -24,7 +24,7 @@ O caos gera vazamento de dados. Ao organizar diagnósticos e remover rastros sen
 Este é o ápice da tese Orbit. Não construímos apenas ferramentas para humanos; construímos o **DNA de infraestrutura para Agentes Autônomos**. 
 
 O diferencial do Orbit é a **Evolução Híbrida**:
-- **Genomas Fixos**: Blueprints de referência que garantem estabilidade e padrões.
+- **Genomas Fixos**: Blueprints de referência que garantem estabilidade e padrões. (Veja: [agent-stack-dev](https://github.com/SH1W4/agent-stack-dev))
 - **Adaptação Orgânica**: A capacidade do Orbit de observar o hardware e o contexto em tempo real (via `orbit doctor`) e "mutar" a stack para garantir performance máxima, agindo como um sistema imunológico e de provisionamento inteligente.
 
 ---

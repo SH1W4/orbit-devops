@@ -1,6 +1,6 @@
 {
   "name": "@symbeon/orbit-devops",
-  "version": "1.2.0",
+  "version": "1.3.1",
   "description": "The Developer's Workspace Command Center. Diagnose, Optimize, Compact, Control.",
   "main": "bin/orbit.js",
   "bin": {
