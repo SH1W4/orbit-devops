@@ -18,6 +18,9 @@
 
 **Orbit-DevOps** is a professional-grade CLI toolkit designed to reclaim GBs of "ghost" storage from modern development stacks. It specializes in **WSL2 VHDX compaction**, **Docker pruning**, and **Dev-Stack synchronization**.
 
+> [!IMPORTANT]
+> **Read the [Orbit Thesis & Manifesto](./THESIS.md)** to understand the philosophy and strategic vision behind this project.
+
 ## 🚀 One-Minute Start
 
 Run without installing:
