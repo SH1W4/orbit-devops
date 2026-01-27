@@ -1,7 +1,9 @@
 # 🪐 Orbit-DevOps
  
  <div align="center">
-   <img src="https://raw.githubusercontent.com/SH1W4/orbit-devops/main/docs/assets/logo.png" alt="Orbit-DevOps Logo" width="200" onerror="this.style.display='none'"/>
+  <img src="docs/assets/orbit_header_banner_1769555034227.png" alt="Orbit-DevOps Cinematic Header" width="100%" />
+  <br/><br/>
+  <img src="https://raw.githubusercontent.com/SH1W4/orbit-devops/main/docs/assets/logo.png" alt="Orbit-DevOps Logo" width="150" onerror="this.style.display='none'"/>
    <h3>The Developer's Workspace Command Center</h3>
    <p><b>Diagnose. Optimize. Compact. Control.</b></p>
  
