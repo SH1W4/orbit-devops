@@ -1,0 +1,24 @@
+{
+  "stack_name": "Autonomous-Dev-Shell",
+  "version": "1.0.0",
+  "archetype": "Specialist-Developer",
+  "requirements": {
+    "os": "Windows 11 | WSL2",
+    "runtime": ["Node.js 20.x", "Python 3.12"],
+    "cli_tools": ["gh", "npm", "git", "orbit"],
+    "env_vars": {
+      "AGENT_MODE": "autonomous",
+      "ORBIT_ENV": "production"
+    }
+  },
+  "provisioning": {
+    "doctor_before_run": true,
+    "cleanup_on_exit": true,
+    "sync_stack_on_change": true
+  },
+  "permissions": {
+    "fs_read": ["PROJECT_ROOT"],
+    "fs_write": ["PROJECT_ROOT/temp", "PROJECT_ROOT/logs"],
+    "network": true
+  }
+}

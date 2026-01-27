@@ -20,6 +20,9 @@ Este é o diferencial estratégico. Para que IAs e Agentes (como o Antigravity) 
 ### 3. Fortificando a Privacidade (Sovereign Context)
 O caos gera vazamento de dados. Ao organizar diagnósticos e remover rastros sensíveis de caminhos locais, o Orbit garante que o desenvolvedor possa compartilhar seu trabalho e suas métricas sem expor sua vida privada. É a ferramenta da **Soberania Digital**.
 
+### 4. Pilhas de Agentes (Agent DNA & Autonomy)
+Este é o ápice da tese Orbit. Não construímos apenas ferramentas para humanos; construímos o **DNA de infraestrutura para Agentes Autônomos**. Ao permitir "Stacks" personalizadas, o Orbit permite que um Agente Especialista (ex: um Engenheiro de IA, um Auditor de Segurança ou um Arquiteto de Cloud) receba uma máquina pré-otimizada e configurada especificamente para sua função. É o **Provisionamento Biológico** para a vida digital.
+
 ---
 
 ## 🚀 A Visão: Do Local para o Hub
