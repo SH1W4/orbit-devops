@@ -1,6 +1,6 @@
 # 🧮 Mathematica Orbitae: A Lógica Não-Semântica do Orbit
 
-O Orbit não opera apenas sobre arquivos; ele opera sobre a **Homeostase Sistêmica**. Para fundamentar essa simbiose, definimos a **Matemática do Orbit**, um framework não-semântico para medir e otimizar a vitalidade de qualquer ambiente agente.
+O Orbit não opera apenas sobre arquivos; ele opera sobre a **Homeostase Sistêmica**. Para fundamentar essa simbiose, definimos a **Matemática do Orbit**, expressa formalmente através da [Álgebra Orbital](./ORBIT_ALGEBRA.md).
 
 ## 1. As Variáveis Fundamentais
 

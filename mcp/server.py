@@ -4,6 +4,7 @@ import sys
 import logging
 from typing import Any, List, Optional
 from mcp.server.fastmcp import FastMCP
+from core.algebra import OrbitAlgebra
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -104,6 +105,26 @@ def read_architecture() -> str:
         with open(arch_path, "r", encoding="utf-8") as f:
             return f.read()
     return "Architecture file not found."
+
+@mcp.tool()
+def evaluate_system_vitality(omega: float, phi: float, sigma: float) -> dict:
+    """
+    Calculates the system vitality using the Orbit Symbiotic Algebra.
+    
+    Args:
+        omega: Entropy (0-1)
+        phi: Vitality (0-1)
+        sigma: Symbiosis (0-1)
+    """
+    return OrbitAlgebra.reason_state(omega, phi, sigma)
+
+@mcp.tool()
+def solve_homeostasis(current_omega: float, current_phi: float, current_sigma: float) -> str:
+    """
+    Provides a formal logical proof for the best course of action to restore homeostasis.
+    """
+    result = OrbitAlgebra.reason_state(current_omega, current_phi, current_sigma)
+    return f"Formal Proof Found:\n{result['proof']}\nRecommended Operator: {result['recommendation']}\nFinal Vitality Prediction: {result['vitality_score']}"
 
 if __name__ == "__main__":
     mcp.run()

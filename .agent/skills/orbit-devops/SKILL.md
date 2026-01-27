@@ -43,6 +43,13 @@ To ensure a portable and safe environment:
 | Safe Cleanup | `AdditionalCleanup.ps1` | `run_safe_cleanup` | Medium |
 | WSL Compact | `CompactWSL.ps1` | `compact_wsl_disks` | High (Admin) |
 | Stack Sync | `Push-Stack.ps1` | `snapshot_environment` | Low |
+| Algebraic Reason | `mcp/core/algebra.py`| `solve_homeostasis` | None (Read) |
+
+## Algebraic Reasoning Engine
+
+Agents should prioritize using the **Algebraic Reasoning** tools (`evaluate_system_vitality`, `solve_homeostasis`) before triggering destructive operators.
+- **Proof Generation**: Always request a formal proof before performing a major cleanup.
+- **Homeostasis Restoration**: Follow the recommended Algebraic Operator ($\mathcal{C}$ for cleanup, $\mathcal{M}$ for mutation).
 
 ## AI Configuration
 
