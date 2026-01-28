@@ -30,7 +30,17 @@ const program = new Command();
 program
   .name('orbit')
   .description('Orbit-DevOps: The Developer\'s Workspace Command Center')
-  .version('1.4.0');
+  .version('1.4.0')
+  .hook('preAction', () => {
+    console.log(chalk.cyan(`
+   ____  ____  ____  ____  ______
+  / __ \\/ __ \\/ __ )/  _/ /_  __/
+ / / / / /_/ / __  |/ /    / /   
+/ /_/ / _, _/ /_/ // /    / /    
+\\____/_/ |_/_____/___/   /_/     
+    `));
+    console.log(chalk.dim('Orbit-DevOps v1.4.2 | Sovereign Agentic Infrastructure\n'));
+  });
 
 // --- Commands ---
 
