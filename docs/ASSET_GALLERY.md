@@ -4,7 +4,11 @@ Esta galeria contém os ativos visuais oficiais gerados para a identidade da **S
 
 ## 1. Banner Oficial do Comando
 Uma visão panorâmica do "Bridge" do Orbit. Representa o controle soberano sobre a infraestrutura global.
-![Orbit Command Banner](./assets/orbit_header_banner_1769555034227.png)
+### Versão Ultra-Wide (README)
+![Orbit Command Banner Wide](./assets/orbit_header_banner_wide_1769556349917.png)
+
+### Versão Full Cinematic
+![Orbit Command Banner Full](./assets/orbit_header_banner_1769555034227.png)
 
 ---
 
