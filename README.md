@@ -1,7 +1,7 @@
 # 🪐 Orbit-DevOps
 
 <div align="center">
-  <img src="docs/assets/orbit_header_banner_wide_1769556349917.png" alt="Orbit-DevOps Cinematic Header (Ultra-Wide)" width="100%" />
+  <img src="https://raw.githubusercontent.com/SH1W4/orbit-devops/main/docs/assets/orbit_header_banner_wide_1769556349917.png" alt="Orbit-DevOps Cinematic Header (Ultra-Wide)" width="100%" />
   <br/><br/>
   <img src="https://raw.githubusercontent.com/SH1W4/orbit-devops/main/docs/assets/logo.png" alt="Orbit-DevOps Logo" width="150" onerror="this.style.display='none'"/>
   <h3>The Developer's Workspace Command Center</h3>
@@ -78,7 +78,7 @@ npm install -g @symbeon/orbit-devops
 ## ✨ Core Superpowers
 
 <div align="center">
-  <img src="docs/assets/orbit_ghost_hunt_1769555101583.png" alt="Ghost Hunt Scanner" width="80%" />
+  <img src="https://raw.githubusercontent.com/SH1W4/orbit-devops/main/docs/assets/orbit_ghost_hunt_1769555101583.png" alt="Ghost Hunt Scanner" width="80%" />
 </div>
 <br/>
 
