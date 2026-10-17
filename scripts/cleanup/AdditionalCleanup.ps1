@@ -28,7 +28,12 @@ foreach ($target in $targets) {
         $items = @(Get-ChildItem -LiteralPath $target.Path -Force -ErrorAction SilentlyContinue)
     }
 
-    $bytes = ($items | Measure-Object -Property Length -Sum).Sum
+    if ($target.Mode -eq "OldFiles") {
+        $sizeItems = $items
+    } else {
+        $sizeItems = @(Get-ChildItem -LiteralPath $target.Path -Recurse -Force -File -ErrorAction SilentlyContinue)
+    }
+    $bytes = ($sizeItems | Measure-Object -Property Length -Sum).Sum
     if ($null -eq $bytes) { $bytes = 0 }
     $entry = [pscustomobject]@{
         Name = $target.Name
