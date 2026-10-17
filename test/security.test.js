@@ -27,6 +27,14 @@ describe('Orbit-DevOps security guardrails', () => {
     expect(server).toContain('return run_script("cleanup/AdditionalCleanup.ps1")');
   });
 
+  it('routes MCP diagnostics to existing scripts', () => {
+    const server = read('mcp/server.py');
+    expect(server).toContain('diagnostic/ScanStorage.ps1');
+    expect(server).toContain('diagnostic/ScanTargets.ps1');
+    expect(server).not.toContain('analysis/ScanStorage.ps1');
+    expect(server).not.toContain('analysis/ScanTargets.ps1');
+  });
+
   it('does not automatically publish the local software inventory', () => {
     const script = read('scripts/stack/Push-Stack.ps1');
     const executableLines = script.split('\n').filter((line) => !line.trimStart().startsWith('#')).join('\n');
