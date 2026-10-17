@@ -1,17 +1,27 @@
-$paths = @(
-    "$env:USERPROFILE\Desktop\PROJETOS\02_ORGANIZATIONS\MOBILIDADE\guardrive-core-backup",
-    "$env:USERPROFILE\Desktop\PROJETOS\05_PLATFORMS\SYMBEON-AI\SYMBEON\backup",
-    "$env:USERPROFILE\Desktop\PROJETOS\04_DEVELOPER_TOOLS\GITHUB_PROFILE_NEO_SH1W4\backups"
+[CmdletBinding()]
+param(
+    [string]$WorkspaceRoot = $env:ORBIT_WORKSPACE
 )
 
-Write-Host "=== BACKUP SIZE ANALYSIS ==="
-foreach ($p in $paths) {
-    if (Test-Path $p) {
-        Write-Host "Measuring $p ..."
-        $size = Get-ChildItem $p -Recurse -Force -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum
-        Write-Host "SIZE: $([math]::Round($size.Sum / 1GB, 2)) GB"
-    }
-    else {
-        Write-Host "Not found: $p"
-    }
+if (-not $WorkspaceRoot) {
+    $WorkspaceRoot = Join-Path $HOME "Projects"
 }
+if (-not (Test-Path -LiteralPath $WorkspaceRoot -PathType Container)) {
+    Write-Error "Workspace root not found. Set ORBIT_WORKSPACE or pass -WorkspaceRoot."
+    exit 1
+}
+
+Write-Host "=== BACKUP SIZE ANALYSIS ==="
+Get-ChildItem -LiteralPath $WorkspaceRoot -Directory -Recurse -Force -ErrorAction SilentlyContinue |
+    Where-Object { $_.Name -match '^(backup|backups|archive)$' } |
+    ForEach-Object {
+        $files = Get-ChildItem -LiteralPath $_.FullName -File -Recurse -Force -ErrorAction SilentlyContinue
+        $bytes = ($files | Measure-Object -Property Length -Sum).Sum
+        if ($null -eq $bytes) { $bytes = 0 }
+        $relative = [System.IO.Path]::GetRelativePath($WorkspaceRoot, $_.FullName)
+        [pscustomobject]@{
+            Directory = $relative
+            Files = $files.Count
+            SizeGB = [math]::Round($bytes / 1GB, 2)
+        }
+    } | Sort-Object SizeGB -Descending | Format-Table -AutoSize
