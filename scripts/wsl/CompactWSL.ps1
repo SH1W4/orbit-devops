@@ -3,7 +3,7 @@
 # REQUIRES: Administrator Privileges
 
 param (
-    [switch]$DryRun
+    [switch]$Execute
 )
 
 Write-Host "🪐 Orbit-DevOps: WSL Compact Tool" -ForegroundColor Cyan
@@ -26,12 +26,12 @@ foreach ($disk in $vhdxFiles) {
     Write-Host "Location: $($disk.DirectoryName)" -ForegroundColor Gray
     Write-Host "Current Size: $sizeGB GB" -ForegroundColor Magenta
 
-    if ($DryRun) {
-        Write-Host "[Dry Run] Would compact this disk." -ForegroundColor Yellow
+    if (-not $Execute) {
+        Write-Host "[Preview] No disk changes made. Pass -Execute only after reviewing the disk path." -ForegroundColor Yellow
         continue
     }
 
-    Write-Host "Prepare to compact? (WSL will be shut down) [Y/N]" -ForegroundColor Yellow -NoNewline
+    Write-Host "EXECUTION REQUESTED: WSL will be shut down and the selected virtual disk will be modified. Continue? [Y/N]" -ForegroundColor Yellow -NoNewline
     $confirm = Read-Host
     if ($confirm -ne "Y" -and $confirm -ne "y") { continue }
 
