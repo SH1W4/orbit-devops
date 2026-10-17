@@ -29,7 +29,7 @@ def run_script(script_rel_path: str, mac_script_path: str = None, args: List[str
     if IS_WINDOWS:
         script_path = os.path.join(SCRIPTS_DIR, script_rel_path)
         interpreter = "powershell"
-        exec_args = ["-ExecutionPolicy", "Bypass", "-File", script_path]
+        exec_args = ["-NoProfile", "-File", script_path]
     else:
         # macOS / Linux logic
         if not mac_script_path:
