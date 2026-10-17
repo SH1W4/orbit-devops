@@ -2,66 +2,26 @@
 
 ## Supported Versions
 
-We take security seriously in Orbit-DevOps. The following versions are currently supported with security updates:
-
-| Version | Supported          |
-| ------- | ------------------ |
-| 0.1.x   | :white_check_mark: |
+Security fixes are developed against the current repository branch. Release-specific support commitments will be documented when a release policy is established.
 
 ## Reporting a Vulnerability
 
-We appreciate responsible disclosure of security vulnerabilities. If you discover a security issue, please report it by emailing **security@docsync.dev** or by opening a private security advisory on GitHub.
+Please report vulnerabilities through GitHub's private security advisory feature for this repository. Do not publish exploit details or sensitive logs in public issues.
 
-### What to Include
+When reporting, include:
+- A concise description and potential impact
+- Affected version, operating system, and relevant configuration
+- Minimal reproduction steps, with secrets and personal data removed
+- Any known mitigation
 
-Please include the following information in your security report:
+Do not include API tokens, passwords, private keys, seed phrases, or unredacted diagnostic reports.
 
-1. **Description**: A clear description of the vulnerability
-2. **Impact**: Potential impact and attack scenarios
-3. **Reproduction**: Step-by-step instructions to reproduce the issue
-4. **Environment**: Affected versions and operating systems
-5. **Mitigation**: Any temporary workarounds you've identified
+## Security Practices
 
-### Response Timeline
+Orbit-DevOps includes scripts that can inspect or modify the host environment. Treat diagnostic outputs as potentially sensitive and review them before sharing. Review all cleanup, synchronization, and disk-management plans before authorizing actions.
 
-- **Initial Response**: Within 24 hours of report
-- **Confirmation**: Within 72 hours
-- **Resolution**: Security fixes are prioritized and typically released within 7-14 days
-- **Disclosure**: Public disclosure after fix is available, coordinated with reporter
+The presence of a script or an agent capability does not itself authorize execution. Do not assume a command is safe unless its current implementation and effects have been reviewed.
 
-### Security Features
+## Disclosure
 
-Orbit-DevOps implements several security measures:
-
-- **Input Validation**: All user inputs are validated and sanitized
-- **Path Traversal Protection**: File system operations are restricted to authorized directories
-- **Token Security**: API tokens are handled securely and never logged
-- **Dependency Scanning**: Regular automated scans for vulnerable dependencies
-- **Static Analysis**: Code is analyzed with Bandit and other security tools
-
-### Security Best Practices
-
-When using Orbit-DevOps:
-
-1. **Environment Variables**: Store sensitive tokens in environment variables, never in code
-2. **File Permissions**: Ensure proper file permissions on configuration files
-3. **Network Security**: Use HTTPS for all API communications
-4. **Regular Updates**: Keep Orbit-DevOps and its dependencies updated
-5. **Audit Logs**: Monitor sync operations and access patterns
-
-### Security Contacts
-
-- **Security Team**: security@docsync.dev
-- **Maintainer**: [NEO-SH1W4](https://github.com/NEO-SH1W4)
-- **GitHub Security**: Use GitHub's private security advisory feature
-
-### Hall of Fame
-
-We recognize security researchers who help improve Orbit-DevOps's security:
-
-*No reports yet - be the first!*
-
----
-
-**Note**: This security policy is actively maintained and may be updated. Check back regularly for changes.
-
+Coordinate public disclosure through the private security advisory process after maintainers have assessed and addressed the report.
