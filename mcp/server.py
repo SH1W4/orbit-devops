@@ -73,14 +73,14 @@ def analyze_storage() -> str:
     Analyzes disk usage to find large folders and potential cleanup targets.
     Returns a list of space hogs.
     """
-    return run_script("analysis/ScanStorage.ps1")
+    return run_script("diagnostic/ScanStorage.ps1")
 
 @mcp.tool()
 def check_docker_usage() -> str:
     """
     Checks Docker disk usage (images, containers, volumes).
     """
-    return run_script("analysis/ScanTargets.ps1")
+    return run_script("diagnostic/ScanTargets.ps1")
 
 @mcp.tool()
 def run_safe_cleanup(dry_run: bool = True) -> str:
