@@ -50,14 +50,14 @@ Instead of changing the username folder, use these safer approaches:
 1. Open Settings (Win + I)
 2. Go to: Accounts → Your info
 3. Click "Manage my Microsoft account"
-4. Change display name to "JX"
+4. Change display name to your preferred name
 ```
 **Result:** Your name shows as "JX" everywhere, but the folder stays `C:\Users\Username` (safe!)
 
 #### Option 2: Use Environment Variables
 ```powershell
 # Create a custom environment variable
-[Environment]::SetEnvironmentVariable("JX_HOME", $env:USERPROFILE, "User")
+[Environment]::SetEnvironmentVariable("DEV_HOME", $env:USERPROFILE, "User")
 
 # Now you can use $env:JX_HOME in scripts instead of hardcoded paths
 ```
@@ -96,7 +96,7 @@ It's just an internal Windows path that you rarely see.
 If you absolutely must change the username, here's the safest approach:
 
 1. **Create a New User Account**
-   - Create a fresh account named "JX"
+   - Create a fresh account with your preferred username
    - Transfer files manually
    - Reinstall applications
    - **This is safer than renaming!**
