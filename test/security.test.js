@@ -43,4 +43,25 @@ describe('Orbit-DevOps security guardrails', () => {
   it('keeps local node_modules out of version control', () => {
     expect(read('.gitignore')).toMatch(/^node_modules\/$/m);
   });
+
+  it('does not expose a GitHub token through the legacy push helper', () => {
+    const script = read('scripts/legacy/ForcePush.ps1');
+    expect(script).toContain('No Git operation was performed.');
+    expect(script).not.toContain('gh auth token');
+    expect(script).not.toContain('git -c credential.helper= push');
+  });
+
+  it('keeps Downloads organization scripts disabled', () => {
+    for (const file of ['scripts/utils/OrganizeDownloads.ps1', 'scripts/utils/DeepOrganizeDownloads.ps1']) {
+      const script = read(file);
+      expect(script).toContain('No files were moved.');
+      expect(script).not.toMatch(/\bMove-Item\b/i);
+    }
+  });
+
+  it('makes WSL compaction a preview unless explicitly executed', () => {
+    const script = read('scripts/wsl/CompactWSL.ps1');
+    expect(script).toContain('[switch]$Execute');
+    expect(script).toContain('if (-not $Execute)');
+  });
 });
