@@ -82,4 +82,21 @@ describe('Orbit-DevOps security guardrails', () => {
     expect(script).toContain('[switch]$Execute');
     expect(script).toContain('if (-not $Execute)');
   });
+
+  it('keeps legacy broad forensic RAM audits disabled', () => {
+    for (const file of [
+      'scripts/diagnostic/ForensicRAMAudit.ps1',
+      'scripts/diagnostic/ForensicRAMAudit_UTF8.ps1',
+      'scripts/diagnostic/ForensicRAMAudit_v2.ps1',
+      'scripts/diagnostic/ForensicRAMAudit_v3.ps1',
+    ]) {
+      const script = read(file);
+      expect(script).toContain('DISABLED');
+      expect(script).toContain('exit 1');
+      expect(script).not.toContain('Get-Process');
+      expect(script).not.toContain('Get-Service');
+      expect(script).not.toContain('FullRAMReport');
+    }
+  });
+
 });
