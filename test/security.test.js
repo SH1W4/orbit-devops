@@ -29,9 +29,10 @@ describe('Orbit-DevOps security guardrails', () => {
 
   it('does not automatically publish the local software inventory', () => {
     const script = read('scripts/stack/Push-Stack.ps1');
-    expect(script).not.toContain('git add $');
-    expect(script).not.toContain('git commit $');
-    expect(script).not.toContain('git push $');
+    const executableLines = script.split('\n').filter((line) => !line.trimStart().startsWith('#')).join('\n');
+    expect(executableLines).not.toContain('git add ');
+    expect(executableLines).not.toContain('git commit ');
+    expect(executableLines).not.toContain('git push ');
   });
 
   it('uses supervised agent defaults and disables automatic side effects', () => {
