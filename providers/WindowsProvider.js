@@ -19,7 +19,7 @@ export default class WindowsProvider extends BaseProvider {
 
     return new Promise((resolve) => {
       const child = spawn('powershell.exe', [
-        '-ExecutionPolicy', 'Bypass', 
+        '-NoProfile', 
         '-File', fullPath, 
         ...args
       ], {
