@@ -62,6 +62,13 @@ describe('Orbit-DevOps security guardrails', () => {
     expect(script).not.toContain('git -c credential.helper= push');
   });
 
+  it('does not bypass PowerShell execution policy in launchers', () => {
+    const provider = read('providers/WindowsProvider.js');
+    const server = read('mcp/server.py');
+    expect(provider).not.toContain("'Bypass'");
+    expect(server).not.toContain('"Bypass"');
+  });
+
   it('keeps Downloads organization scripts disabled', () => {
     for (const file of ['scripts/utils/OrganizeDownloads.ps1', 'scripts/utils/DeepOrganizeDownloads.ps1']) {
       const script = read(file);
