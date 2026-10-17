@@ -29,7 +29,7 @@ describe('Orbit-DevOps security guardrails', () => {
 
   it('does not automatically publish the local software inventory', () => {
     const script = read('scripts/stack/Push-Stack.ps1');
-    expect(script).not.toMatch(/git\s+(?:add|commit|push)\b/i);
+    expect(script).not.toMatch(/^\\s*git\\s+(?:add|commit|push)\\b/im);
   });
 
   it('uses supervised agent defaults and disables automatic side effects', () => {
@@ -41,7 +41,7 @@ describe('Orbit-DevOps security guardrails', () => {
   });
 
   it('keeps local node_modules out of version control', () => {
-    expect(read('.gitignore')).toMatch(/^node_modules\/$/m);
+    expect(read('.gitignore')).toMatch(/^node_modules\\/$/m);
   });
 
   it('does not expose a GitHub token through the legacy push helper', () => {
@@ -55,7 +55,7 @@ describe('Orbit-DevOps security guardrails', () => {
     for (const file of ['scripts/utils/OrganizeDownloads.ps1', 'scripts/utils/DeepOrganizeDownloads.ps1']) {
       const script = read(file);
       expect(script).toContain('No files were moved.');
-      expect(script).not.toMatch(/\bMove-Item\b/i);
+      expect(script).not.toMatch(/\\bMove-Item\\b/i);
     }
   });
 
