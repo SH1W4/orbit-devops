@@ -1,28 +1,26 @@
-$ErrorActionPreference = "SilentlyContinue"
-$root = "$HOME\Desktop\PROJETOS"
-$targets = @(
-    "03_AI_AGENTS\VIREON\target",
-    "02_ORGANIZATIONS\VAREJO\GuardFlow\backend\target",
-    "05_PLATFORMS\SYMBEON-ECOSYSTEM\node_modules",
-    "02_ORGANIZATIONS\VAREJO\GuardFlow\frontend\node_modules",
-    "00_ECOSYSTEM_COMERCIAL\SEVE-FRAMEWORK\SEVE-FRAMEWORK\node_modules",
-    "00_ECOSYSTEM_COMERCIAL\OPTIMUS\core\node_modules",
-    "01_CORE_SYSTEMS\mcp-ecosystem\node_modules"
+[CmdletBinding()]
+param(
+    [string]$WorkspaceRoot = $env:ORBIT_WORKSPACE
 )
 
-Write-Host "=== SURGICAL BLOAT REPORT ===" -ForegroundColor Cyan
-$report = @()
-
-foreach ($t in $targets) {
-    $full = "$root\$t"
-    if (Test-Path $full) {
-        # Fast size check
-        $size = Get-ChildItem $full -Recurse -Force | Measure-Object -Property Length -Sum
-        $report += [PSCustomObject]@{
-            Path       = $t
-            "Size(GB)" = [math]::Round($size.Sum / 1GB, 2)
-        }
-    }
+if (-not $WorkspaceRoot) { $WorkspaceRoot = Join-Path $HOME "Projects" }
+if (-not (Test-Path -LiteralPath $WorkspaceRoot -PathType Container)) {
+    Write-Error "Workspace root not found. Set ORBIT_WORKSPACE or pass -WorkspaceRoot."
+    exit 1
 }
 
-$report | Sort-Object "Size(GB)" -Descending | Format-Table -AutoSize
+$artifactNames = @("node_modules", "target", ".next", "dist", "build", ".venv", "venv")
+Write-Host "=== WORKSPACE ARTIFACT SCAN ===" -ForegroundColor Cyan
+$report = foreach ($name in $artifactNames) {
+    Get-ChildItem -LiteralPath $WorkspaceRoot -Directory -Recurse -Force -Filter $name -ErrorAction SilentlyContinue |
+        ForEach-Object {
+            $bytes = (Get-ChildItem -LiteralPath $_.FullName -File -Recurse -Force -ErrorAction SilentlyContinue |
+                Measure-Object -Property Length -Sum).Sum
+            if ($null -eq $bytes) { $bytes = 0 }
+            [pscustomobject]@{
+                Path = [System.IO.Path]::GetRelativePath($WorkspaceRoot, $_.FullName)
+                SizeGB = [math]::Round($bytes / 1GB, 2)
+            }
+        }
+}
+$report | Sort-Object SizeGB -Descending | Format-Table -AutoSize
