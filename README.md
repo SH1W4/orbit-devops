@@ -94,7 +94,7 @@ npm install -g @symbeon/orbit-devops
 > Diagnostic reports and software inventories can expose local paths, process information, and installed software. Review outputs before sharing. Cleanup is a dry-run by default; legacy destructive cleanup and Downloads-organization scripts are disabled. Do not publish local inventories without explicit review.
 
 ## 🛠️ Universal Requirements
-- **Windows**: PowerShell 7+
+- **Windows**: Windows PowerShell 5.1 (used by the CLI); PowerShell 7+ recommended for manual use
 - **Linux/macOS**: POSIX shell with Node.js 18+
 - **Genome Library**: Linked via [agent-stack-dev](https://github.com/SH1W4/agent-stack-dev)
 
