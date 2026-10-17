@@ -9,7 +9,7 @@
 
 ## Why We Don't Recommend Changing Windows Username
 
-After extensive testing and analysis, we've determined that changing the Windows username folder (`C:\Users\Username` → `C:\Users\JX`) is **NOT WORTH THE RISK**.
+After extensive testing and analysis, we've determined that changing the Windows username folder (`C:\Users\<old-profile>` → `C:\Users\<new-profile>`) is **NOT WORTH THE RISK**.
 
 ### ❌ Critical Risks
 
@@ -52,7 +52,7 @@ Instead of changing the username folder, use these safer approaches:
 3. Click "Manage my Microsoft account"
 4. Change display name to your preferred name
 ```
-**Result:** Your name shows as "JX" everywhere, but the folder stays `C:\Users\Username` (safe!)
+**Result:** Your name shows as "JX" everywhere, but the folder stays `C:\Users\<profile>` (safe!)
 
 #### Option 2: Use Environment Variables
 ```powershell
@@ -65,7 +65,7 @@ Instead of changing the username folder, use these safer approaches:
 #### Option 3: Create Symbolic Links
 ```powershell
 # Create a symbolic link (requires admin)
-New-Item -ItemType SymbolicLink -Path "C:\JX" -Target "C:\Users\Username"
+New-Item -ItemType SymbolicLink -Path "C:\DevHome" -Target "$env:USERPROFILE"
 
 # Now C:\JX points to your user folder
 ```
