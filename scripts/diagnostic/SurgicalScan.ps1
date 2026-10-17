@@ -10,6 +10,19 @@ if (-not (Test-Path -LiteralPath $WorkspaceRoot -PathType Container)) {
 }
 
 $artifactNames = @("node_modules", "target", ".next", "dist", "build", ".venv", "venv")
+function Get-WorkspaceRelativePath {
+    param([string]$Root, [string]$FullPath)
+    $rootFull = [System.IO.Path]::GetFullPath($Root).TrimEnd('\', '/')
+    $full = [System.IO.Path]::GetFullPath($FullPath)
+    if ($full.StartsWith($rootFull + [System.IO.Path]::DirectorySeparatorChar, [System.StringComparison]::OrdinalIgnoreCase)) {
+        return $full.Substring($rootFull.Length + 1)
+    }
+    if ($full.StartsWith($rootFull, [System.StringComparison]::OrdinalIgnoreCase)) {
+        return $full.Substring($rootFull.Length).TrimStart('\', '/')
+    }
+    return $full
+}
+
 Write-Host "=== WORKSPACE ARTIFACT SCAN ===" -ForegroundColor Cyan
 $report = foreach ($name in $artifactNames) {
     Get-ChildItem -LiteralPath $WorkspaceRoot -Directory -Recurse -Force -Filter $name -ErrorAction SilentlyContinue |
@@ -18,7 +31,7 @@ $report = foreach ($name in $artifactNames) {
                 Measure-Object -Property Length -Sum).Sum
             if ($null -eq $bytes) { $bytes = 0 }
             [pscustomobject]@{
-                Path = [System.IO.Path]::GetRelativePath($WorkspaceRoot, $_.FullName)
+                Path = (Get-WorkspaceRelativePath -Root $WorkspaceRoot -FullPath $_.FullName)
                 SizeGB = [math]::Round($bytes / 1GB, 2)
             }
         }
