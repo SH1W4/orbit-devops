@@ -60,14 +60,14 @@ program
 
 program
   .command('clean')
-  .description('Perform safe system and dev-tool cleanup')
+  .description('Preview a narrowly scoped cleanup plan (dry-run by default)')
   .action(async () => {
     await provider.runScript('Cleanup', 'scripts/cleanup/AdditionalCleanup.ps1');
   });
 
 program
   .command('compact')
-  .description('Compact WSL2 virtual disks manually (requires Admin)')
+  .description('Preview WSL2 virtual disk compaction; execution is opt-in')
   .action(async () => {
     if (platform !== 'win32') {
       console.error(chalk.yellow('\n⚠️  Note: WSL2 compaction is only available on Windows.'));
@@ -78,7 +78,7 @@ program
 
 program
   .command('sync')
-  .description('Sync environment stack to GitHub')
+  .description('Generate a local software inventory for review; does not publish')
   .action(async () => {
     await provider.runScript('Stack Sync', 'scripts/stack/Push-Stack.ps1');
   });
