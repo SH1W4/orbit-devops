@@ -1,5 +1,9 @@
 # Security recovery — October 2026
 
+## Scope
+
+This change reduces exposure in the current repository snapshot and disables unsafe automation. It is a containment/remediation step, not a claim that all historical Git data has been erased or that the repository has received a complete security audit.
+
 ## Changes in this branch
 
 - Removed machine-specific diagnostic reports and replaced local setup snapshots with generic documentation.
@@ -21,20 +25,20 @@
 
 ## Validation status
 
-- GitHub Actions CI passed on commit `8fda45a862703d41b4d76d3d3c828b180b74101e` before the latest forensic-script changes.
-- The four legacy forensic RAM audit scripts were subsequently replaced with fail-closed stubs; CI must pass again on the latest PR head.
+- GitHub Actions CI passed on the current PR head `2cd7a11c3692af88a47460986df2285d7617d081` (run 39062905242): dependency installation, the tracked-`node_modules` guard, lint, and tests succeeded.
 - A local installation and test run has not been performed from this environment.
-- A local installation and test run has not been performed from this environment.
+- No cleanup script has been executed against a user's machine as part of this recovery.
 
 ## Remaining remediation
 
-- The `main` branch still contains the prior machine-specific files and tracked `node_modules/` until the PR is integrated.
-- The sensitive-looking local reports and project paths were present in earlier commits. Removing them from the current tree does not erase historical copies.
-- The legacy forensic RAM scripts no longer collect or write process/service inventories in this branch; old versions remain in Git history until history remediation is explicitly approved and performed.
-- Full Git history remediation requires a separately planned history rewrite and coordinated force-push; this has not been performed.
-- Secret-pattern searches were preliminary and inconclusive. No credential was confirmed, but a complete secret/history scan remains outstanding.
+- Before this PR is merged, the default `main` branch still contains the prior machine-specific files and tracked `node_modules/`; this PR removes them from the proposed current snapshot.
+- Sensitive-looking local reports, project paths, and older versions of disabled scripts remain in earlier Git commits. A normal merge does not erase those historical copies.
+- Secret-pattern searches so far were preliminary and inconclusive. No credential was confirmed, but a complete historical secret scan has not been completed.
+- A historical version of `scripts/legacy/ForcePush.ps1` retrieved `gh auth token` and embedded it in a remote URL used by Git. No literal token was found in the inspected script. Whether it was executed and whether a credential was exposed in process arguments or logs remain unverified.
+- If there is evidence that a credential was exposed, revoke/rotate it and review relevant account activity.
+- Historical remediation may require a coordinated Git history rewrite and force-push. That action has not been performed and should be planned separately because it affects clones, forks, and collaborators.
 - Review dependency provenance and compare the published npm package with the reviewed source before publishing another release.
 
 ## Safety boundary
 
-No cleanup script has been executed against a user's machine. No branch has been merged into `main`. No history rewrite or force push has been performed.
+This PR is intended to remediate the current repository snapshot and disable unsafe behavior. Merging it does **not** certify that historical data has been erased, that all secrets have been ruled out, or that the package is ready for a new release. No history rewrite or force-push has been performed.
