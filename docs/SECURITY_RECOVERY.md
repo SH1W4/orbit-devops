@@ -14,7 +14,7 @@
 - Disabled all four legacy forensic RAM audit scripts because they collected broad process, company, description, and Windows service inventories.
 - Disabled the legacy token-based push helper that embedded a GitHub token in a remote URL.
 - Disabled automatic Downloads organization and changed WSL compaction to preview-only unless explicitly executed.
-- Added regression tests for the security guardrails.
+- Added regression tests for the security guardrails, including an explicit test that the four broad forensic RAM audit scripts remain disabled.
 - Changed agent-stack template defaults to supervised operation with cleanup, sync, and network access disabled.
 - Aligned CLI and lockfile root version metadata with `package.json` 1.4.1.
 - Added ignore rules for local reports and inventories.
