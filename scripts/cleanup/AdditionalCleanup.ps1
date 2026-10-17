@@ -44,6 +44,9 @@ foreach ($target in $targets) {
     }
     $plan += $entry
     Write-Host ("[PLAN] {0}: {1} item(s), {2:N2} MB" -f $target.Name, $entry.Count, ($entry.Bytes / 1MB))
+    foreach ($item in $entry.Items) {
+        Write-Host ("       - {0}" -f $item.FullName)
+    }
 }
 
 if (-not $Execute) {
@@ -51,7 +54,7 @@ if (-not $Execute) {
     return
 }
 
-$confirmation = Read-Host "Type DELETE to confirm removal of the listed cleanup targets"
+$confirmation = Read-Host "Type DELETE to confirm removal of the exact listed paths (directories are removed recursively)"
 if ($confirmation -cne "DELETE") {
     Write-Host "Cancelled. No files were changed." -ForegroundColor Yellow
     return
