@@ -7,7 +7,7 @@ This directory contains the **Model Context Protocol (MCP)** implementation for 
 The MCP agent enables your AI assistant to:
 
 - 🏥 **Check System Health:** Query CPU, RAM, and Disk status in real-time.
-- 🧹 **Perform Cleanup:** Trigger safe cleanup routines via chat commands.
+- 🧹 **Preview Cleanup:** Inspect a dry-run plan via chat; destructive cleanup execution is disabled through MCP.
 - 🕵️ **Analyze Storage:** Ask "Where is my disk space going?" and get an analysis.
 - 🐳 **Inspect Docker:** Check for wasted Docker resources.
 
@@ -55,7 +55,8 @@ Add the following to your `claude_desktop_config.json`:
 
 ## 🛡️ Security
 
-The MCP server executes PowerShell scripts on your host machine.
-- It is designed to run **inspection** and **safe cleanup** scripts.
-- It respects the same safety execution policies as the scripts themselves.
-- Always review what the AI intends to do before authorizing actions.
+The MCP server can execute diagnostic PowerShell scripts on your host machine.
+- Cleanup through MCP is preview-only; it cannot execute deletions.
+- PowerShell is launched without an execution-policy bypass.
+- Diagnostic reports may contain local machine details. Review them before sharing.
+- Review every proposed action before authorizing it.

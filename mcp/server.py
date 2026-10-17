@@ -29,7 +29,7 @@ def run_script(script_rel_path: str, mac_script_path: str = None, args: List[str
     if IS_WINDOWS:
         script_path = os.path.join(SCRIPTS_DIR, script_rel_path)
         interpreter = "powershell"
-        exec_args = ["-ExecutionPolicy", "Bypass", "-File", script_path]
+        exec_args = ["-NoProfile", "-File", script_path]
     else:
         # macOS / Linux logic
         if not mac_script_path:
@@ -73,26 +73,28 @@ def analyze_storage() -> str:
     Analyzes disk usage to find large folders and potential cleanup targets.
     Returns a list of space hogs.
     """
-    return run_script("analysis/ScanStorage.ps1")
+    return run_script("diagnostic/ScanStorage.ps1")
 
 @mcp.tool()
 def check_docker_usage() -> str:
     """
     Checks Docker disk usage (images, containers, volumes).
     """
-    return run_script("analysis/ScanTargets.ps1")
+    return run_script("diagnostic/ScanTargets.ps1")
 
 @mcp.tool()
 def run_safe_cleanup(dry_run: bool = True) -> str:
     """
-    Runs safe cleanup tasks (Browser cache, Downloads, Temp).
-    
-    Args:
-        dry_run: If True, only lists what would be deleted.
+    Returns a cleanup preview only. This MCP tool never deletes files.
+    Actual cleanup requires a user to run the PowerShell script locally,
+    inspect its plan, pass -Execute, and confirm the DELETE prompt.
     """
-    if dry_run:
-        return "Dry run not fully supported by underlying script yet. It would clean Browsers, Downloads, and Temp."
-    
+    if not dry_run:
+        return (
+            "Execution is disabled through MCP for safety. "
+            "Run scripts/cleanup/AdditionalCleanup.ps1 locally, review the plan, "
+            "and only then use -Execute with explicit interactive confirmation."
+        )
     return run_script("cleanup/AdditionalCleanup.ps1")
 
 @mcp.tool()

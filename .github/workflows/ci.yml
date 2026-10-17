@@ -19,8 +19,17 @@ jobs:
           node-version: "20.x"
           cache: "npm"
 
+      - name: Ensure dependencies are not committed
+        shell: pwsh
+        run: |
+          $tracked = git ls-files -- node_modules
+          if ($tracked) {
+            Write-Error "node_modules must not be tracked. Remove it from Git."
+            exit 1
+          }
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Lint code
         run: npm run lint

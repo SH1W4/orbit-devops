@@ -29,8 +29,8 @@ Para garantir que nossos ativos de valor (Elite Stacks e Fórmulas Matemáticas 
 
 ## 3. Checklist de Lançamento Público
 
-- [x] **Limpeza de PII**: Todos os caminhos `C:\Users\User` e nomes pessoais foram removidos.
-- [x] **Licenciamento**: Verificado o arquivo `LICENSE` (MIT/Apache 2.0).
+- [ ] **Limpeza de PII**: Dados locais foram removidos da árvore atual na branch de recuperação; a auditoria completa do histórico Git e a remoção histórica ainda estão pendentes.
+- [ ] **Licenciamento**: Confirmar o arquivo `LICENSE` e a consistência entre a licença declarada e a licença publicada.
 - [x] **Branding**: Logos e Shields (badges) atualizados para v1.4.1.
 - [x] **Skill Maps**: Prontos para guiar outros agentes no uso da ferramenta.
 

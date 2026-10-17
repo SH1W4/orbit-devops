@@ -1,70 +1,72 @@
-# Script de Limpeza Adicional
-# Pode ser executado sem privilégios de admin
+[CmdletBinding()]
+param(
+    [switch]$Execute
+)
 
-$logPath = "$env:USERPROFILE\Desktop\DIAGNOSTIC_BACKUP\ADDITIONAL_CLEANUP_LOG.txt"
+$ErrorActionPreference = "Continue"
+$cutoffDate = (Get-Date).AddDays(-7)
+$targets = @(
+    @{ Name = "Chrome cache"; Path = Join-Path $env:LOCALAPPDATA "Google\Chrome\User Data\Default\Cache"; Mode = "Contents" },
+    @{ Name = "Edge cache"; Path = Join-Path $env:LOCALAPPDATA "Microsoft\Edge\User Data\Default\Cache"; Mode = "Contents" },
+    @{ Name = "Temporary files older than 7 days"; Path = Join-Path $env:LOCALAPPDATA "Temp"; Mode = "OldFiles" }
+)
 
-function Write-Log {
-    param($Message)
-    $line = "[$(Get-Date -Format 'HH:mm:ss')] $Message"
-    Write-Host $line -ForegroundColor Cyan
-    $line | Out-File -FilePath $logPath -Append -Encoding utf8
-}
+Write-Host "Orbit-DevOps cleanup — $(if ($Execute) { 'EXECUTION REQUESTED' } else { 'DRY RUN (default)' })" -ForegroundColor Cyan
+Write-Host "Downloads and the user's broad .cache directory are deliberately excluded." -ForegroundColor Yellow
+$plan = @()
 
-Write-Log "=== LIMPEZA ADICIONAL ==="
+foreach ($target in $targets) {
+    if (-not (Test-Path -LiteralPath $target.Path)) {
+        Write-Host "[SKIP] $($target.Name): target not found."
+        continue
+    }
 
-# 1. Cache do Google Chrome
-Write-Log "Limpando cache do Google Chrome..."
-$chromePath = "$env:USERPROFILE\AppData\Local\Google\Chrome\User Data\Default\Cache"
-if (Test-Path $chromePath) {
-    $before = (Get-ChildItem $chromePath -Recurse -Force -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum / 1GB
-    Remove-Item "$chromePath\*" -Recurse -Force -ErrorAction SilentlyContinue
-    Write-Log "Chrome cache: ~$([math]::Round($before, 2)) GB limpo"
-}
+    if ($target.Mode -eq "OldFiles") {
+        $items = @(Get-ChildItem -LiteralPath $target.Path -Recurse -Force -File -ErrorAction SilentlyContinue |
+            Where-Object { $_.LastWriteTime -lt $cutoffDate })
+    } else {
+        $items = @(Get-ChildItem -LiteralPath $target.Path -Force -ErrorAction SilentlyContinue)
+    }
 
-# 2. Cache do Edge
-Write-Log "Limpando cache do Edge..."
-$edgePath = "$env:USERPROFILE\AppData\Local\Microsoft\Edge\User Data\Default\Cache"
-if (Test-Path $edgePath) {
-    $before = (Get-ChildItem $edgePath -Recurse -Force -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum / 1GB
-    Remove-Item "$edgePath\*" -Recurse -Force -ErrorAction SilentlyContinue
-    Write-Log "Edge cache: ~$([math]::Round($before, 2)) GB limpo"
-}
-
-# 3. Cache geral do usuário
-Write-Log "Limpando .cache do usuário..."
-$cachePath = "$env:USERPROFILE\.cache"
-if (Test-Path $cachePath) {
-    $before = (Get-ChildItem $cachePath -Recurse -Force -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum / 1GB
-    Remove-Item "$cachePath\*" -Recurse -Force -ErrorAction SilentlyContinue
-    Write-Log ".cache: ~$([math]::Round($before, 2)) GB limpo"
-}
-
-# 4. Downloads - Instaladores
-Write-Log "Removendo instaladores antigos de Downloads..."
-$downloads = "$env:USERPROFILE\Downloads"
-$installers = @("*.exe", "*.msi")
-foreach ($pattern in $installers) {
-    Get-ChildItem $downloads -Filter $pattern -File | Where-Object {
-        $_.Name -match "Setup|Installer|Install|Driver|NVIDIA|Google"
-    } | ForEach-Object {
-        $sizeMB = [math]::Round($_.Length / 1MB, 0)
-        Write-Log "Removendo: $($_.Name) ($sizeMB MB)"
-        Remove-Item $_.FullName -Force -ErrorAction SilentlyContinue
+    if ($target.Mode -eq "OldFiles") {
+        $sizeItems = $items
+    } else {
+        $sizeItems = @(Get-ChildItem -LiteralPath $target.Path -Recurse -Force -File -ErrorAction SilentlyContinue)
+    }
+    $bytes = ($sizeItems | Measure-Object -Property Length -Sum).Sum
+    if ($null -eq $bytes) { $bytes = 0 }
+    $entry = [pscustomobject]@{
+        Name = $target.Name
+        Path = $target.Path
+        Items = $items
+        Count = $items.Count
+        Bytes = [int64]$bytes
+    }
+    $plan += $entry
+    Write-Host ("[PLAN] {0}: {1} item(s), {2:N2} MB" -f $target.Name, $entry.Count, ($entry.Bytes / 1MB))
+    foreach ($item in $entry.Items) {
+        Write-Host ("       - {0}" -f $item.FullName)
     }
 }
 
-# 5. Temp do usuário (arquivos antigos)
-Write-Log "Limpando arquivos temporários antigos..."
-$tempPath = "$env:USERPROFILE\AppData\Local\Temp"
-$cutoffDate = (Get-Date).AddDays(-7)
-Get-ChildItem $tempPath -Recurse -Force -ErrorAction SilentlyContinue | 
-Where-Object { $_.LastWriteTime -lt $cutoffDate } |
-Remove-Item -Force -Recurse -ErrorAction SilentlyContinue
+if (-not $Execute) {
+    Write-Host "No files were changed. Review this plan; rerun with -Execute only when you explicitly intend to delete the listed targets." -ForegroundColor Green
+    return
+}
 
-# 6. Status Final
-Write-Log "=== RESULTADO ==="
-$disk = Get-WmiObject Win32_LogicalDisk -Filter "DeviceID='C:'"
-$freeGB = [math]::Round($disk.FreeSpace / 1GB, 2)
-Write-Log "Espaço livre agora: $freeGB GB"
+$confirmation = Read-Host "Type DELETE to confirm removal of the exact listed paths (directories are removed recursively)"
+if ($confirmation -cne "DELETE") {
+    Write-Host "Cancelled. No files were changed." -ForegroundColor Yellow
+    return
+}
 
-Write-Log "Limpeza concluída!"
+foreach ($entry in $plan) {
+    foreach ($item in $entry.Items) {
+        try {
+            Remove-Item -LiteralPath $item.FullName -Recurse -Force -ErrorAction Stop
+        } catch {
+            Write-Warning ("Could not remove '{0}': {1}" -f $item.FullName, $_.Exception.Message)
+        }
+    }
+}
+Write-Host "Cleanup attempt completed. Review any warnings above; no claim is made that every item was removed." -ForegroundColor Green

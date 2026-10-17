@@ -27,13 +27,13 @@
 
 ```mermaid
 graph TD
-    Orbit["🪐 Orbit-DevOps Ecosystem"] --> Core["⚙️ Core Engine (v1.4.0)"]
+    Orbit["🪐 Orbit-DevOps Ecosystem"] --> Core["⚙️ Core Engine (v1.4.1)"]
     Orbit --> Agentic["🤖 Agentic Layer"]
     Orbit --> Genome["🧬 Genome Library"]
     Orbit --> Authority["🎓 Authority Layer"]
     Orbit --> Universal["🌐 Universal UI (Roadmap)"]
 
-    Core --> PWin["Windows Provider (PS7)"]
+    Core --> PWin["Windows Provider (Windows PowerShell 5.1)"]
     Core --> PUnix["Unix Provider (Linux/macOS)"]
     Core --> Diag["Diagnostic Scanners"]
 
@@ -86,12 +86,15 @@ npm install -g @symbeon/orbit-devops
 | :--- | :--- | :--- |
 | `orbit doctor` | 🌍 All | **Full System Scan**: OS, RAM, and Storage health. |
 | `orbit space` | 🌍 All | **Storage Forensics**: Find large "ghost" folders. |
-| `orbit clean` | 🌍 All | **Smart Sanitation**: Caches, logs, and temp files. |
-| `orbit compact`| 🪟 Win | **WSL2 Compactor**: Reclaim space from VHDX disks. |
-| `orbit sync` | 🌍 All | **Genome Sync**: Sync environment DNA to the library. |
+| `orbit clean` | 🌍 All | **Cleanup Preview**: Lists narrowly scoped cache/temp targets; dry-run by default. |
+| `orbit compact`| 🪟 Win | **WSL2 Preview**: Finds virtual disks; compaction is opt-in. |
+| `orbit sync` | 🌍 All | **Local Inventory**: Exports software metadata for review; does not publish. |
+
+> [!CAUTION]
+> Diagnostic reports and software inventories can expose local paths, process information, and installed software. Review outputs before sharing. Cleanup is a dry-run by default; legacy destructive cleanup and Downloads-organization scripts are disabled. Do not publish local inventories without explicit review.
 
 ## 🛠️ Universal Requirements
-- **Windows**: PowerShell 7+
+- **Windows**: Windows PowerShell 5.1 (used by the CLI); PowerShell 7+ recommended for manual use
 - **Linux/macOS**: POSIX shell with Node.js 18+
 - **Genome Library**: Linked via [agent-stack-dev](https://github.com/SH1W4/agent-stack-dev)
 

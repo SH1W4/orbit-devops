@@ -1,17 +1,39 @@
-$paths = @(
-    "$env:USERPROFILE\Desktop\PROJETOS\05_PLATFORMS\SYMBEON-ECOSYSTEM\node_modules",
-    "$env:USERPROFILE\Desktop\PROJETOS\03_AI_AGENTS\VIREON\frontend\node_modules",
-    "$env:USERPROFILE\Desktop\PROJETOS\04_DEVELOPER_TOOLS\SynPhytica\web\node_modules",
-    "$env:USERPROFILE\Desktop\PROJETOS\04_DEVELOPER_TOOLS\GITHUB_MASTERY\node_modules",
-    "$env:USERPROFILE\Desktop\PROJETOS\00_ECOSYSTEM_COMERCIAL\SEVE-FRAMEWORK\SEVE-FRAMEWORK\node_modules",
-    "$env:USERPROFILE\Desktop\PROJETOS\02_ORGANIZATIONS\VAREJO\GuardFlow\frontend\node_modules"
+[CmdletBinding()]
+param(
+    [string]$WorkspaceRoot = $env:ORBIT_WORKSPACE
 )
 
-Write-Host "=== NODE_MODULES SIZE ANALYSIS ==="
-foreach ($p in $paths) {
-    if (Test-Path $p) {
-        Write-Host "Measuring $p ..."
-        $size = Get-ChildItem $p -Recurse -Force -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum
-        Write-Host "SIZE: $([math]::Round($size.Sum / 1MB, 2)) MB"
-    }
+if (-not $WorkspaceRoot) {
+    $WorkspaceRoot = Join-Path $HOME "Projects"
 }
+if (-not (Test-Path -LiteralPath $WorkspaceRoot -PathType Container)) {
+    Write-Error "Workspace root not found. Set ORBIT_WORKSPACE or pass -WorkspaceRoot."
+    exit 1
+}
+
+function Get-WorkspaceRelativePath {
+    param([string]$Root, [string]$FullPath)
+    $rootFull = [System.IO.Path]::GetFullPath($Root).TrimEnd('\', '/')
+    $full = [System.IO.Path]::GetFullPath($FullPath)
+    if ($full.StartsWith($rootFull + [System.IO.Path]::DirectorySeparatorChar, [System.StringComparison]::OrdinalIgnoreCase)) {
+        return $full.Substring($rootFull.Length + 1)
+    }
+    if ($full.StartsWith($rootFull, [System.StringComparison]::OrdinalIgnoreCase)) {
+        return $full.Substring($rootFull.Length).TrimStart('\', '/')
+    }
+    return $full
+}
+
+Write-Host "=== NODE_MODULES SIZE ANALYSIS ==="
+Get-ChildItem -LiteralPath $WorkspaceRoot -Directory -Recurse -Force -Filter "node_modules" -ErrorAction SilentlyContinue |
+    ForEach-Object {
+        $files = Get-ChildItem -LiteralPath $_.FullName -File -Recurse -Force -ErrorAction SilentlyContinue
+        $bytes = ($files | Measure-Object -Property Length -Sum).Sum
+        if ($null -eq $bytes) { $bytes = 0 }
+        $relative = (Get-WorkspaceRelativePath -Root $WorkspaceRoot -FullPath $_.FullName)
+        [pscustomobject]@{
+            Path = $relative
+            Files = $files.Count
+            SizeMB = [math]::Round($bytes / 1MB, 2)
+        }
+    } | Sort-Object SizeMB -Descending | Format-Table -AutoSize
