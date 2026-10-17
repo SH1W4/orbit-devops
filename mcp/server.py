@@ -85,14 +85,16 @@ def check_docker_usage() -> str:
 @mcp.tool()
 def run_safe_cleanup(dry_run: bool = True) -> str:
     """
-    Runs safe cleanup tasks (Browser cache, Downloads, Temp).
-    
-    Args:
-        dry_run: If True, only lists what would be deleted.
+    Returns a cleanup preview only. This MCP tool never deletes files.
+    Actual cleanup requires a user to run the PowerShell script locally,
+    inspect its plan, pass -Execute, and confirm the DELETE prompt.
     """
-    if dry_run:
-        return "Dry run not fully supported by underlying script yet. It would clean Browsers, Downloads, and Temp."
-    
+    if not dry_run:
+        return (
+            "Execution is disabled through MCP for safety. "
+            "Run scripts/cleanup/AdditionalCleanup.ps1 locally, review the plan, "
+            "and only then use -Execute with explicit interactive confirmation."
+        )
     return run_script("cleanup/AdditionalCleanup.ps1")
 
 @mcp.tool()
