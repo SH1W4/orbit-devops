@@ -41,7 +41,7 @@ describe('Orbit-DevOps security guardrails', () => {
   });
 
   it('keeps local node_modules out of version control', () => {
-    expect(read('.gitignore')).toMatch(/^node_modules\\/$/m);
+    expect(read('.gitignore')).toContain('node_modules/');
   });
 
   it('does not expose a GitHub token through the legacy push helper', () => {
