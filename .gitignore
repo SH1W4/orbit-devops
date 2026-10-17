@@ -17,3 +17,20 @@ Thumbs.db
 # Logs
 *.log
 diagnostico_*.txt
+
+# Local diagnostics, inventories, and machine-specific reports
+ghost_audit.json
+FullRAMReport*.txt
+DIAGNOSTIC_BACKUP/
+CONFIG_LOG.md
+SESSION.md
+NEXT_STEPS.md
+diagnostico_*.json
+dev-stack.json
+
+# Local Python environments and caches
+.venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
