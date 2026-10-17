@@ -27,13 +27,13 @@
 
 ```mermaid
 graph TD
-    Orbit["🪐 Orbit-DevOps Ecosystem"] --> Core["⚙️ Core Engine (v1.4.0)"]
+    Orbit["🪐 Orbit-DevOps Ecosystem"] --> Core["⚙️ Core Engine (v1.4.1)"]
     Orbit --> Agentic["🤖 Agentic Layer"]
     Orbit --> Genome["🧬 Genome Library"]
     Orbit --> Authority["🎓 Authority Layer"]
     Orbit --> Universal["🌐 Universal UI (Roadmap)"]
 
-    Core --> PWin["Windows Provider (PS7)"]
+    Core --> PWin["Windows Provider (Windows PowerShell 5.1)"]
     Core --> PUnix["Unix Provider (Linux/macOS)"]
     Core --> Diag["Diagnostic Scanners"]
 
